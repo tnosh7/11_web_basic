@@ -5,7 +5,100 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>본문 바로가기</p>
-	<p></p>
+	<p>학년 :
+		<select name="grade">
+			<option selected="selected" value="1">1학년</option>
+			<option value="2">2학년</option>
+			<option value="3">3학년</option>
+		</select>
+	</p>
+	<p>
+		<select name="num">
+			<option value="all">전체</option>
+			<option value="goodsID">상품번호</option>
+			<option value="goodsName">상품이름</option>
+			<option value="goodsWriter">저자</option>
+			<option value="goodsPublisher">출판사</option>
+		</select>
+		<input type="text"> 
+	</p>
+	<p>상품 가격 : 7000원</p>
+	<p>상품 주문 개수 :
+		<select name="product">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		개
+	</p>
+	<p>
+		<input type="radio" name="internet" value="chrome">chrome 
+		<input type="radio" name="internet" value="firefox">firefox 
+		<input type="radio" name="internet" value="explore">explore 
+		&emsp;기타 :
+		<input type="text" size="13">
+	</p>
+	<p>
+		<input type="radio" name="search" value="basic">기본 조회
+		<input type="radio" name="search" value="detail">상세 조회
+	</p>
+	<form>
+		<p>
+			<select name="user">
+				<option value="userName">사용자 이름</option>
+				<option value="userId">사용자ID</option>
+				<option value="productName">제품명</option>
+			</select>
+			<input type="text">
+			<input type="button" value="당일">
+			<input type="button" value="1주">
+			<input type="button" value="1달">
+		</p>
+	</form>
+	<hr>
+	<form>
+		<p>
+			<input type="radio" name="payment" value="card" checked="checked">신용카드
+			<input type="radio" name="payment" value="phone">휴대용 결제
+		</p>
+		<p>
+			<select name="phoneNum">
+				<option value="010">010</option>
+				<option value="017">017</option>
+				<option value="018">018</option>
+				<option value="019">019</option>
+			</select>
+			-<input type="text" size="10">
+			-<input type="text" size="10">
+		</p>
+	</form>
+	<form>
+		과목 :
+		<input type="checkbox" name="sub" value="html">&ensp;html
+		<input type="checkbox" name="sub" value="css">&ensp;css
+		<input type="checkbox" name="sub" value="javascript">&ensp;javascript
+	</form>
+	<form>
+		<p>
+			구매 이유 :
+			<input type="radio" name="reason" value="qulity">&ensp;품질이 좋다
+			<input type="radio" name="reason" value="value">&ensp;가성비가 좋다
+			<input type="radio" name="reason" value="etc">&ensp;기타
+		</p>
+	</form>
+	<form>
+		<p>
+			<fieldset>
+				<legend>회원정보 입력</legend>
+					<p>아이디 :&ensp;<input type="text" name="userId"></p>
+					<p>비밀번호 :&ensp;<input type="password" name="userPassword"></p>
+					<p>이메일 :&ensp;<input type="email" name="userEmail"></p>
+				<input type="submit" value="쑤쑥쑥">
+			</fieldset>
+		</p>
+	</form>
+	
 </body>
 </html>
