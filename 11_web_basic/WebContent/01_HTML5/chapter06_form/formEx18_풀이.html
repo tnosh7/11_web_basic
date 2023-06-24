@@ -5,7 +5,70 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<form>
+		<fieldset>
+			<legend>배송지 정보</legend>
+			<p>배송방법
+				<input type="radio" name="delivery" value="basic" checked="checked">일반택배
+				<input type="radio" name="delivery" value="store">편의점택배
+				<input type="radio" name="delivery" value="overseas">해외배송
+			</p>
+			<p>배송지 선택
+				<input type="radio" name="location" value="basic" checked="checked">기본배송지
+				<input type="radio" name="location" value="new">새로입력
+				<input type="radio" name="location" value="recently">최근배송지
+			</p>
+			<p>받으실 분
+				<input type="text" size="30">
+			</p>
+			<p>휴대폰번호
+				<select>
+					<option value="010">010</option>
+					<option value="011">011</option>
+					<option value="016">016</option>
+					<option value="017">017</option>
+					<option value="018">018</option>
+					<option value="019">019</option>
+				</select>
+				-<input type="text">
+				-<input type="text">
+			</p>
+			<p>유선전화(선택)
+				<select>
+					<option value="02">02</option>
+					<option value="031">031</option>
+					<option value="032">032</option>
+					<option value="033">033</option>
+					<option value="041">041</option>
+					<option value="042">042</option>
+					<option value="043">043</option>
+					<option value="044">044</option>
+					<option value="051">051</option>
+					<option value="053">052</option>
+				</select>
+				-<input type="text">
+				-<input type="text">
+			</p>
+			<p>주소
+				<input type="text">
+				<a href="formEx18_정답예시.html">우편번호검색</a>
+			</p>
+			<p>지번 주소 : 
+				<input type="text" size="30">
+			</p>
+			<p>도로명 주소 : 
+				<input type="text" size="30">
+			</p>
+			<p>나머지 주소 : 
+				<input type="text" size="30">
+			</p>
+			<p>배송 메시지 
+				<input type="radio" name="ox" value="yes">예
+				<input type="radio" name="ox" value="no" checked="checked">아니요<br>
+				<input type="text" placeholder="택배 기사님께 전달할 메시지를 남겨주세요." size="50">
+			</p>
+		</fieldset>
+	</form>
 
 </body>
 </html>

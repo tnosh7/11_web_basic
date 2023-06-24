@@ -5,7 +5,51 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form>
+		<fieldset>
+			<legend>결제정보</legend>
+			<p>
+				<input type="radio" name="payment" value="creditCard" checked="checked">신용카드&emsp;
+				<input type="radio" name="payment" value="cooperationCard">제휴 신용카드&emsp;
+				<input type="radio" name="payment" value="accountTransfer">실시간 계좌이체&emsp;
+				<input type="radio" name="payment" value="deposit">무통장 입금
+			</p>
+			<p>
+				<input type="radio" name="payment2" value="phone">휴대폰 결제&emsp;
+				<input type="radio" name="payment2" value="kakao">카카오페이(간편결제)&emsp;
+				<input type="radio" name="payment2" value="paynow">페이나우(간편결제)&emsp;
+				<input type="radio" name="payment2" value="payco">페이코(간편결제)&emsp;
+				<input type="radio" name="payment2" value="self">직접 입력
+			</p>
+			<p>카드 선택 :
+				<select>
+					<option value="samsung">삼성</option>
+					<option value="sk">하나SK</option>
+					<option value="hyundai">현대</option>
+					<option value="kb">KB</option>
+					<option value="shinhan">신한</option>
+					<option value="lotte">롯데</option>
+					<option value="bc">BC</option>
+				</select>
+			</p>
+			<p>할부 기간:
+				<select>
+					<option value="1">일시불</option>
+					<option value="2">2개월</option>
+					<option value="3">3개월</option>
+					<option value="4">4개월</option>
+					<option value="5">5개월</option>
+					<option value="6">6개월</option>
+				</select>
+			</p>
+			<p>휴대폰 번호 입력 :
+				<input type="text" size="10">
+				-<input type="text" size="10">
+				-<input type="text" size="10">
+			</p>
+		</fieldset>
 	
+	</form>
 
 </body>
 </html>

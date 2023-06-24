@@ -5,6 +5,81 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>2.배송지 정보</h1>
+	<table border="1">
+		<tr>
+			<td>배송방법</td>
+			<td>
+				<input type="radio" name="delivery" value="일반" checked="checked">일반택배
+				<input type="radio" name="delivery" value="편의점">편의점택배
+				<input type="radio" name="delivery" value="해외">해외배송
+			</td>
+		</tr>
+		<tr>
+			<td>배송지 선택</td>
+			<td>
+				<input type="radio" name="deliveryPlace" value="기본" checked>기본배송지
+				<input type="radio" name="deliveryPlace" value="새로">새로입력
+				<input type="radio" name="deliveryPlace" value="최근">최근배송지
+			</td>
+		</tr>
+		<tr>
+			<td>받으실 분</td>
+			<td><input type="text" size="25"></td>
+		</tr>
+		<tr>
+			<td>휴대폰번호</td>
+			<td>
+				<select>
+					<option value="010" selected="selected">010</option>
+					<option value="011">011</option>
+					<option value="016">016</option>
+					<option value="017">017</option>
+					<option value="018">018</option>
+					<option value="019">019</option>
+				</select>
+				-<input type="text" size="15">
+				-<input type="text" size="15">
+				<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td>유선전화(선택)</td>
+			<td>
+				<select>
+					<option value="02" selected>02</option>
+					<option value="031">031</option>
+					<option value="032">032</option>
+					<option value="041">041</option>
+					<option value="051">051</option>
+				</select>
+				-<input type="text" size="20">
+				-<input type="text" size="20">
+			</td>
+		</tr>
+		<tr>
+			<td>주소</td>
+			<td>
+				<input type="text"><a href="#">우편번호검색</a><br>
+				<p>
+					지번 주소 : <input type="text"><br><br>
+					도로명 주소 : <input type="text"><br><br>
+					나머지 주소 : <input type="text">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>배송 메시지</td>
+			<td><input type="text" placeholder="택배 기사님께 전달한 메시지"></td>
+		</tr>
+		<tr>
+			<td>선물 포장</td>
+			<td>
+				<input type="radio" name="ox" value="yes">예
+				<input type="radio" name="ox" value="no" checked="checked">아니요
+			</td>
+		</tr>
+	</table>
+	
 </body>
 </html>
