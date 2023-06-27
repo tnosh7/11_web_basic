@@ -115,7 +115,7 @@
 		<hr>
 		<table border="1">
 			<colgroup>
-				<col height="2">
+				<col>
 			</colgroup>
 			<thead align="center">
 				<tr bgcolor="lightblue">
@@ -158,7 +158,7 @@
 					<th>입력자</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody >
 				<tr>
 					<td><input type="checkbox"></td>
 					<td>05</td>
@@ -175,7 +175,7 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td>수동과세</td>
+					<td align="center">수동과세</td>
 					<td></td>
 					<td>외상</td>
 					<td>서정화</td>
@@ -196,7 +196,7 @@
 					<td>쿠팡(주)</td>
 					<td>120-88-00767</td>
 					<td></td>
-					<td>수동과세</td>
+					<td align="center">수동과세</td>
 					<td></td>
 					<td>외상</td>
 					<td>서정화</td>
@@ -222,115 +222,216 @@
 					<td></td>
 					<td>서정화</td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td align="right"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			
 			</tbody>
-			
+			<tfoot>
+				<tr>
+					<td colspan="8"></td>
+					<th align="right">9,100,909</th>
+					<th align="right">910,091</th>
+					<th align="right">10,011,000</th>
+					<td></td>
+					<td>
+						<select>
+							<option value="거래처">거래처승계</option>
+							<option value="승계X" selected="selected">승계안함</option>
+							<option value="입력X">입력안함</option>
+						</select>
+					</td>
+					<td></td>
+					<td>
+						<select>
+							<option value="사원승계" selected="selected">사원승계</option>
+							<option value="승계X">승계안함</option>
+							<option value="입력X">입력안함</option>
+						</select>
+					</td>
+					<td align="center">
+						<select>
+							<option value="현장승계">현장승계</option>
+							<option value="승계X">승계안함</option>
+							<option value="입력X">입력안함</option>
+							<option value="입력시간">입력시간</option>
+							<option value="입력방법">입력방법</option>
+						</select>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
 		</table> 
+		<p>
+			계산기 <input type="text"> = <input type="text"><input type="button" value="이력">
+			&emsp;<input type="checkbox" checked="checked">결과값 가져오기
+			&emsp;<input type="checkbox">이력 안보기&emsp;소수점 
+			<select>
+				<option value="0" selected="selected">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+			자리 절사
+		</p>
+		<table border="1" width="1100">
+			<thead align="center">
+				<tr bgcolor="gray"> <!-- 세로넓이는 행에 -->
+					<th rowspan="2">전표수</th> <!-- 가로넓이는 열에 -->
+					<th>1월</th>
+					<th>2월</th>
+					<th>3월</th>
+					<th>4월</th>
+					<th>5월</th>
+					<th>6월</th>
+					<th>7월</th>
+					<th>8월</th>
+					<th>9월</th>
+					<th>10월</th>
+					<th>11월</th>
+					<th>12월</th>
+					<th>합계</th>
+				</tr>
+			</thead>
+			<tbody align="center">
+				<tr height="20">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+		<table border="1" width="530" heigth="300">
+			<tr>
+				<th colspan="6">[2023.05.01~05.31]매출 [총 2건] : 공급가 9,100,909/부가세 910,091</th>
+			</tr>
+			<tr>
+				<td colspan="2">과세매출[총 2건]</td>
+				<td colspan="2">면세매출[총 0건]</td>
+				<td colspan="2">영세율수출[총 0건]</td>
+			</tr>
+			<tr>
+				<td align="right">9,100,909</td>
+				<td align="right">910,091</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>11과세:2건</td>
+				<td>세금계산서</td>
+				<td>13면세</td>
+				<td>계산서</td>
+				<td>12영세</td>
+				<td>영세율</td>
+			</tr>
+			<tr>
+				<td>14건별</td>
+				<td>무증빙</td>
+				<td>18카면</td>
+				<td>카드면세</td>
+				<td>16수출</td>
+				<td>수출</td>
+			</tr>
+			<tr>
+				<td>17카과</td>
+				<td>카드과세</td>
+				<td>23현면</td>
+				<td>현금면세</td>
+				<td>19카영</td>
+				<td>카드영세</td>
+			</tr>
+			<tr>
+				<td>22현과</td>
+				<td>현금영수증</td>
+				<td>20면건</td>
+				<td>무증빙</td>
+				<td>24현영</td>
+				<td>현금영세</td>
+			</tr>
+			<tr>
+				<td>15간이</td>
+				<td>간이과세</td>
+				<td>21전자</td>
+				<td>전자화폐</td>
+				<td colspan="2">44(폐기),45(분실),46(판촉)</td>
+			</tr>
+		</table>
+		<hr>
+		<table border="1" width="530" heigth="300">
+			<tr>
+				<th colspan="6">[2023.05.01~05.31]매입 [총 0건] : 공급가 /부가세</th>
+			</tr>
+			<tr>
+				<td colspan="2">과세매출[총 0건]</td>
+				<td colspan="2">면세매출[총 0건]</td>
+				<td colspan="2">영세율수출[총 0건]</td>
+			</tr>
+			<tr>
+				<td align="right"></td>
+				<td align="right"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>51과세</td>
+				<td>세금계산서</td>
+				<td>53면세</td>
+				<td>계산서</td>
+				<td>52영세</td>
+				<td>영세율</td>
+			</tr>
+			<tr>
+				<td>54건별</td>
+				<td>세금계산서불공</td>
+				<td>58카면</td>
+				<td>카드면세</td>
+				<td>55수출</td>
+				<td>세관장</td>
+			</tr>
+			<tr>
+				<td>57카과</td>
+				<td>카드과세</td>
+				<td>62현면</td>
+				<td>현금영수증</td>
+				<td>59카영</td>
+				<td>카드영세</td>
+			</tr>
+			<tr>
+				<td>64현과</td>
+				<td>현금영수증</td>
+				<td>60면건</td>
+				<td>무증빙</td>
+				<td colspan="2" rowspan="2"></td>
+			</tr>
+			<tr>
+				<td>61현과</td>
+				<td>현금영수증</td>
+				<td>65현불</td>
+				<td>현금영수불공</td>
+			</tr>
+		</table>
+		<h5>납부세액계산 : 매출세액(910,091) - [매입세액(0)+의제공제액(0)] = 납부 910,091원</h5>
 	</form>
 </body>
 </html>
