@@ -5,8 +5,24 @@
 <title>연습문제</title>
 </head>
 <style>
-	tr > td:nth-child {
-		color: lime;
+	tr:first-child > td:nth-child(2) {
+		background-color: lime;
+	}
+	tr:nth-child(2) > td:nth-child(2) {
+		background-color: lime;
+	}
+	tr:nth-child(3) > td:nth-child(2) {
+		background-color: lime;
+	}
+	/* 방법2
+	tr:tr:first-child > td:nth-child(2), 
+	tr:nth-child(2) > td:nth-child(2),
+	tr:nth-child(3) > td:nth-child(2) {
+		background-color: lime;
+	}
+	*/
+	tr:last-child > td:last-child {
+		background-color: red;
 	}
 </style>
 <body>
