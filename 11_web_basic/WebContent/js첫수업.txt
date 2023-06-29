@@ -1,0 +1,5 @@
+<vsc>
+open in browser
+alt + b : 런 
+! + enter : 양식 자동완성
+js->javascript 
