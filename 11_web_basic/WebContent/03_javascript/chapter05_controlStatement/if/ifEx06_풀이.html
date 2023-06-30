@@ -18,6 +18,17 @@
 	 var x = prompt("숫자1 입력 : ");
 	 var y = prompt("숫자2 입력 : ");
 	
+	 x = Number(x); 
+ 	 y = Number(y);
+
+ 	 var total = x * y;
+	
+	 var answer = prompt("정답 입력 : ");
+	 answer = Number(answer);
+
+	 if (answer == total) document.write("정답");
+	 else documemt.write("땡");
+
 </script>
 </head>
 <body>

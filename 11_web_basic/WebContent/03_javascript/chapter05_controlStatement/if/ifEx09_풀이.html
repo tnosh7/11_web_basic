@@ -22,8 +22,20 @@
 	var yourAcc = "4321";
 	var yourMoney = 12000;
 	
-	prompt("이체할 계좌번호를 입력하세요 : ");
-	
+	var checkAcc = prompt("이체할 계좌번호를 입력하세요 : ");
+	if (checkAcc == yourAcc) {
+		var transMoney = prompt("이체할 금액을 입력하세요 : ");
+		transMoney = Number(transMoney);
+
+		if (transMoney <= myMoney) {
+			myMoney -=transMoney;
+			yourMoney +=transMoney;
+			document.write("myMoney = " + myMoney + "원<br>" + "yourMoney = " + yourMoney + "원")
+		}	
+		else document.write("계좌잔액이 부족합니다.<br>")
+	}
+	else (checkAcc != yourAcc) document.write("계좌번호를 확인해주세요.");
+
 	
 		
 </script>

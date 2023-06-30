@@ -15,8 +15,13 @@
 	 *    예) 성적을 잘못 입력했습니다.
 	 */
 		
-	 prompt("성적을 입력하세요(0~100)");
+	 var score = prompt("성적을 입력하세요(0~100)");
+	 score = Number(score);
 	 
+	 if (score >= 60 && score < 101) document.write("합격");
+	 if (score >= 0 && score < 60) document.write("불합격");
+	 if (score < 0 || score > 100) document.write("성적을 잘못 입력했습니다.");
+
 </script>
 </head>
 <body>

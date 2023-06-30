@@ -19,7 +19,19 @@
 	 */
 	
 	var num = 36; 
-		
+	// console.log(typeof num);
+	var cnt = 0;
+	var num10 = parseInt(num / 10);
+	
+	var num1 = num % 10;
+
+	if(num10 == 3 || num10 == 6 || num10 == 9) cnt += 1;
+	if (num1 == 3 || num1 == 6 || num1 == 9) cnt += 1;
+	if (cnt == 2 ) document.write(num + " : 짝짝");
+	else if (cnt == 1) document.write(num + " : 짝");
+	else document.write(num + " : " + num);
+
+
 </script>
 </head>
 <body>

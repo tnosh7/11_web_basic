@@ -13,10 +13,19 @@
 	 * 예) 1 2 짝 4 5 짝 7 8 짝 10 11 12 짝 ...
 	 * 
 	 */
+
+	var i = 1;
+	var cnt = 0; 
+	while (i <= 50) { 
+		var num = i % 10;
+		if (num !=0 && num % 3 == 0 ) {
+			document.write(" 짝");
+		} 
+		else document.write(" " + i);
+		i++;
+	}
+
 	
-
-
-
 </script>
 </head>
 <body>
