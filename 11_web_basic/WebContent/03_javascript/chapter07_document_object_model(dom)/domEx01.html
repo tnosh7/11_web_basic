@@ -44,10 +44,15 @@
 		
 		if (branchNm == "서울" || branchNm == "경기" || branchNm == "인천") { 
 			alert("확인되었습니다.");
+			// .value 사용예시 
+			document.getElementById("orderGoodsNm").value = "";
 
 			// .attribute 사용예시
 			document.getElementById("orderGoodsNm").disabled = false;
 			document.getElementById("orderGoodsQty").disabled = false;
+
+			// .innerHTML 예시 
+			document.getElementById("msg").innerHTML = "<span style='color:lightgreen;'> 확인되었습니다.</span>";
 		}
 		else {
 			alert("확인에 실패하였습니다.");
@@ -58,6 +63,9 @@
 			// .attribute 사용예시
 			document.getElementById("orderGoodsNm").disabled = true;
 			document.getElementById("orderGoodsQty").disabled = true;
+		
+			// .innerHTML 예시 
+			document.getElementById("msg").innerHTML = "<span style='color:red;'> 확인에 실패했습니다.</span>";
 		}
 	}
 
