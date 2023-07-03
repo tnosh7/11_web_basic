@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 23-07-23 17:32 ~ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+
+	function answer() {
+		//방법1
+		// var orderValue = document.getElementById("orderQty").value;
+		// if (orderValue == 1) document.getElementById("price").value = value*1; 
+		// else if (orderValue == 2) document.getElementById("price").value = value*2;
+		// else if (orderValue == 3) document.getElementById("price").value = value*3;
+		// else if (orderValue == 4) document.getElementById("price").value = value*4;
+		// else if (orderValue == 5) document.getElementById("price").value = value*5;
+
+
+		//방법2 
+		var price1 = document.getElementById("price").value
+		for (var i = 0; i < orderValue.length; i++){
+			if (orderValue == i) {
+				price1= value *i;
+			}
+		}
+		document.getElementById("totalPrice") = price1 +"원"; 
+	}
+
+
+</script>
+</head>
+<body>
+	
+	<!-- 
+		
+		셀렉트 태그에서 상품의 수량을 선택하고 수량에 알맞는 가격을 화면에 표시하는 스크립트를 작성해 보시오.
+		
+		1) 1개를 선택하면 7000원
+		2) 2개를 선택하면 14000원
+		3) 3개를 선택하면 21000원
+		4) 4개를 선택하면 28000원
+		5) 5개를 선택하면 35000원
+		
+		
+	 -->
+    <p> 상품 주문 개수 : 
+        <select id="orderQty">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>개&emsp;&emsp;&emsp;
+		<input type="button" value="정답" onclick="answer()">
+ 	</p>
+	<p>
+		<input type="hidden" id="price" value="7000">
+		상품 가격 : <span id="totalPrice">7000</span>원
+	</p>  
+</body>
+</html>
