@@ -1,8 +1,47 @@
 <!DOCTYPE html>
+<!-- 23-07-04 23:40 ~ 23:51 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function data() {
+		
+		var cd1 = document.getElementsByName("cd1");
+		cd1 = cd1[0].value;
+		var cd2 = document.getElementsByName("cd2");
+		cd2 = cd2[0].value;
+		var cd3 = document.getElementsByName("cd3");
+		cd3 = cd3[0].value;
+
+		var nm1 = document.getElementsByName("nm1");
+		nm1 = nm1[0].value;
+		var nm2 = document.getElementsByName("nm2");
+		nm2 = nm2[0].value;
+		var nm3 = document.getElementsByName("nm3");
+		nm3 = nm3[0].value;
+
+		var deposit1 = document.getElementsByName("deposit1");
+		deposit1 = deposit1[0].value;
+		var deposit2 = document.getElementsByName("deposit2");
+		deposit2 = deposit2[0].value;
+		var deposit3 = document.getElementsByName("deposit3");
+		deposit3 = deposit3[0].value;
+	
+		var withdraw1 = document.getElementsByName("withdraw1");
+		withdraw1 = withdraw1[0].value;
+		var withdraw2 = document.getElementsByName("withdraw2");
+		withdraw2 = withdraw2[0].value;
+		var withdraw3 = document.getElementsByName("withdraw3");
+		withdraw3 = withdraw3[0].value;
+
+		console.log("cd1 = " + cd1 +  " & nm1 = " + nm1  + " & deposit1 = " + deposit1 + " & withdraw1 = " + withdraw1 );
+		console.log("cd2 = " + cd2 +  " & nm2 = " + nm2  + " & deposit2 = " + deposit2 + " & withdraw2 = " + withdraw2 );
+		console.log("cd3 = " + cd3 +  " & nm3 = " + nm3  + " & deposit3 = " + deposit3 + " & withdraw3 = " + withdraw3 );
+	}
+
+</script>
 </head>
 <body>
 
@@ -44,7 +83,7 @@
 			<td><input type="text" name="withdraw3"></td>
 		</tr>
 	</table>
-	<input type="button" value="전송" >
+	<input type="button" value="전송" onclick="data();" >
 	
 </body>
 </html>

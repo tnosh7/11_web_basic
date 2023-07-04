@@ -1,8 +1,43 @@
 <!DOCTYPE html>
+<!-- 23-07-04 23:29 ~ 23:35 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function getImg() { 
+		var img = document.getElementById("targetImg");
+		var selectImg = document.getElementById("selectImg").value;
+		img.src="../images/pic_" + selectImg + ".jpg";
+		
+	}
+	function getImgSize() {
+		var imgSize = document.getElementById("imgSize").value;
+		var img = document.getElementById("targetImg");
+		if (imgSize == "XS") {
+			img.width="25";
+			img.height="25";
+		}
+		else if (imgSize == "S") {
+			img.width="50";
+			img.height="50";
+		}
+		else if (imgSize == "M") {
+			img.width="100";
+			img.height="100";
+		}
+		else if (imgSize == "L") {
+			img.width="200";
+			img.height="200";
+		}
+		else if (imgSize == "XL") {
+			img.width="400";
+			img.height="400";
+		}
+	}
+
+</script>
 </head>
 <body>
 	
@@ -37,7 +72,7 @@
 		<img src="../images/pic_1.jpg" id="targetImg" width="200" height="200">
 	</div>
 	
-	이미지 : <select id="selectImg">
+	이미지 : <select id="selectImg" onclick="getImg();">
 				<option value="1">그림 1</option>
 				<option value="2">그림 2</option>
 				<option value="3">그림 3</option>
@@ -49,7 +84,7 @@
 				<option value="9">그림 9</option>
 			</select>
 			
-	사이즈 : <select id="imgSize" >
+	사이즈 : <select id="imgSize" onclick="getImgSize();">
 				<option>XS</option>
 				<option>S</option>
 				<option>M</option>

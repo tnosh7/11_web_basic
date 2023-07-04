@@ -4,24 +4,22 @@
 <meta charset="UTF-8">
 <title>연습예제</title>
 <script>
+	var toggle =false;
+	function makeReasonBuy(method) {
 
-	function makeReasonBuy(reason) {
-
-		if (reason =="etc") {
-			var addText= document.createElement("input");
+		if (method=="etc" && !toggle) {
+			var addText = document.createElement("input");
 			addText.type="text";
 			addText.size="100";
 			addText.placeholder="이유를 적어주세요.";
-			
 			document.getElementById("target").appendChild(addText);
-
+			toggle= true;
 		}
-		else {
-			var pNode= document.getElementById("target");
-			pNode.removeChild(pNode.lastChild);
-
+		else if (toggle && method!="etc"){
+			var node= document.getElementById("target");
+			node.removeChild(node.lastChild); 
+			toggle=false;
 		}
-
 	}
 
 

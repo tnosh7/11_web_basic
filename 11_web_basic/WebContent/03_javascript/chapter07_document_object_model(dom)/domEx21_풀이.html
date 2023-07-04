@@ -1,8 +1,18 @@
 <!DOCTYPE html>
+<!-- 23-07-04 21:52 ~ 21:55-->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script> 
+
+	function searchWord() {
+		var textValue = document.getElementById("search").value;
+		document.getElementById("displaySearchWord").innerHTML = textValue; 
+
+	}
+
+</script>
 </head>
 <body>
 
@@ -13,10 +23,10 @@
 	 -->
 
 
-	<p>검색어 : <input type="text" id="search"></p>
+	<p>검색어 : <input type="text" id="search" onkeyup="searchWord();"></p>
 	
 	<div id="displaySearchWord">
-		
+
 	</div>
 
 </body>

@@ -6,27 +6,23 @@
 <script> 
 
 	var payMethod = document.getElementsByName("payMethod");
-	function MUp() { 
-		var check = -1;
-		for(var i = 0; i < payMethod.length; i++){
-			if (payMethod[i].value == "phone") {
-				check = i;
-			}
-		}
+	function MUp(method) { 
+		
+		
 		var setInnerHtml = "";
-		if (check == "0") {
+		if (method == "phone") {
 			setInnerHtml = "핸드폰 번호 : ";
 			setInnerHtml += "<select>";
 			setInnerHtml += "<option value='010'>010</option>";
 			setInnerHtml +="<option value='017'>017</option>";
 			setInnerHtml +="<option value='018'>018</option>";
 			setInnerHtml +="<option value='019'>019</option>";
-			setInnerHtml += "</select>";
+			setInnerHtml += "</select> -";
 			setInnerHtml += "<input type='text' size='10' > - ";
 			setInnerHtml += "<input type='text' size='10' > ";
 
 		}
-		else if (check == "1") {
+		else {
 			setInnerHtml = "카드 번호 : <input type='text' size='10' >";
 			setInnerHtml += " <input type='text' size='10' >";
 			setInnerHtml += " <input type='text' size='10' >";
@@ -58,8 +54,8 @@
 	 -->
 	
 	<p>
-		<input type="radio" name="payMethod" value="phone" checked onchange="MUp();"> 휴대폰 결제
-		<input type="radio" name="payMethod" value="card" onchange="MUp();"> 신용카드	
+		<input type="radio" name="payMethod" value="phone" checked onchange="MUp('phone');"> 휴대폰 결제
+		<input type="radio" name="payMethod" value="card" onchange="MUp('card');"> 신용카드	
 	</p>
 	<div>
 	<p id="target">

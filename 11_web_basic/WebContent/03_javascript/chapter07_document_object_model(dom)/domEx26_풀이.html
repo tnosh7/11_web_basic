@@ -1,8 +1,30 @@
 <!DOCTYPE html>
+<!-- 23-07-04 22:58 ~ 23:03 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function getResult() {
+
+		if (document.getElementsByName("checkAll")[0].checked) {
+			document.getElementsByName("agree1")[0].checked = true;
+			document.getElementsByName("agree2")[0].checked = true;
+			document.getElementsByName("agree3")[0].checked = true;
+
+		}
+		else {
+			document.getElementsByName("agree1")[0].checked = false;
+			document.getElementsByName("agree2")[0].checked = false;
+			document.getElementsByName("agree3")[0].checked = false;
+
+		}
+
+	}
+
+
+</script>
 </head>
 <body>
 
@@ -13,7 +35,7 @@
 	
 	 -->
 
-	<input type="checkbox" name="checkAll" > 전체 선택
+	<input type="checkbox" name="checkAll" onclick="getResult();" > 전체 선택
 	<form>
 		<p>
 			<input type="checkbox" name="agree1" > 네이버 이용 약관 동의 (필수)<br>

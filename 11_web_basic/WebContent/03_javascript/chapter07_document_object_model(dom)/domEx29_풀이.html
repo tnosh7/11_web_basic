@@ -1,8 +1,17 @@
 <!DOCTYPE html>
+<!-- 23-07-04 23:25 ~ 23:28 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function getImg() {
+		var selectImg = document.getElementById("selectImg").value;
+		document.getElementById("targetImg").src ="../images/pic_" + selectImg + ".jpg";
+	}
+
+</script>
 </head>
 <body>
 	
@@ -26,7 +35,7 @@
 		<img src="../images/pic_1.jpg" id="targetImg" width="200" height="200">
 	</div>
 	
-	이미지 : <select id="selectImg">
+	이미지 : <select id="selectImg" onclick="getImg();">
 				<option value="1">그림 1</option>
 				<option value="2">그림 2</option>
 				<option value="3">그림 3</option>

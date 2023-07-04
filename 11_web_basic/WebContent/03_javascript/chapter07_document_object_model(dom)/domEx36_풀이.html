@@ -4,29 +4,28 @@
 <meta charset="UTF-8">
 <title>연습예제</title>
 <script>
-	var toggle =true;
+	
+	var toggle=false;
 	function checkPwdLength() {
-		
-		var password = document.getElementById("pwd").value;
-		if (password.length<8 && toggle) {
-			//////////////////////////////////////////////////////////////////////////
-			var pwd = document.createElement("");
-			//////////////////////////////////////////////////////////////////////////
-			pwd.style ="color:red;";
-			var addtext = document.createTextNode("비밀번호는 8자리 이상으로 작성하세요.");
-			pwd.appendChild(addtext);
-			document.getElementById("target").appendChild(pwd);
+		var pwd = document.getElementById("pwd");
+		if (pwd.value.length < 8 && !toggle) {
+			
+			var p = document.createElement("p");
+			var span = document.createElement("span");
+			var text = document.createTextNode("비밀번호는 8자리 이상으로 작성하세요.");
+
+			span.style.color="red";
+			p.appendChild(span);
+			span.appendChild(text);
+			document.getElementById("target").appendChild(p);
+			toggle =true;
+		} 
+		else if (toggle && pwd.value.length >= 8) {
+			var node = document.getElementById("target");
+			document.removeChild(node.lastChild);
 			toggle=false;
 		}
-		else if (password.length >= 8 && !toggle) {
-
-			var node = document.getElementById("target");
-			node.remove(node.lastChild);
-			toggle=true;
-		}
-
 	}
-
 
 </script>
 </head>

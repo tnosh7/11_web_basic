@@ -3,6 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	var fileCnt=1;
+	function appendFile(){ 
+		fileCnt++;
+		var addP = document.createElement("p");
+		var addFile = document.createElement("input");
+		addFile.type ="file";
+		addFile.name="file"+fileCnt;
+
+		var addButton1 = document.createElement("input");
+		addButton1.type="button";
+		addButton1.value="수정";
+		var addButton2 = document.createElement("input");
+		addButton2.type="button";
+		addButton2.value="삭제";
+
+		addP.appendChild(addFile);
+		addP.appendChild(addButton1);
+		addP.appendChild(addButton2);
+		document.getElementById("fileList").appendChild(addP);
+
+	}
+
+	function removeFile() {
+		if (fileCnt ==1) return;
+		var node = document.getElementById("fileList");
+		node.removeChild(node.lastChild);
+		fileCnt--;
+	}
+
+</script>
 </head>
 <body>
 

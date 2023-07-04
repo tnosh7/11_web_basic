@@ -3,6 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+	var fileCnt = 1;
+	function appendFile() {
+		var addP = document.createElement("p");
+		var addFile = document.createElement("input");
+		addFile.type="file";
+		addFile.name="file" + fileCnt;
+		addP.appendChild(addFile);
+		document.getElementById("fileList").appendChild(addP);
+		fileCnt++;
+
+	}
+	function removeFile() {
+		if (fileCnt==1) return;
+		var node = document.getElementById("fileList");
+		node.removeChild(node.lastChild);
+		fileCnt--;
+
+	}
+
+</script>
 </head>
 <body>
 

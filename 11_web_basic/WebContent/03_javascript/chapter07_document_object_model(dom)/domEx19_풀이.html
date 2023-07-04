@@ -1,8 +1,32 @@
 <!DOCTYPE html>
+<!-- 23-07-04 21:40 ~ 21:44-->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function radioEx(method) {
+
+		if (method=="detail") {
+			document.getElementById("category").disabled = false;
+			document.getElementById("keyword").disabled = false;
+			document.getElementById("today").disabled = false;
+			document.getElementById("1week").disabled = false;
+			document.getElementById("1month").disabled = false;
+
+		}
+		else {
+			document.getElementById("category").disabled = true;
+			document.getElementById("keyword").disabled = true;
+			document.getElementById("today").disabled = true;
+			document.getElementById("1week").disabled = true;
+			document.getElementById("1month").disabled = true;
+
+		}
+	}
+
+</script>
 </head>
 <body>
 
@@ -17,8 +41,8 @@
 	
 	
 	<p>
-		<input type="radio" name="search" value="base" checked> 기본 조회	
-		<input type="radio" name="search" value="detail"> 상세 조회
+		<input type="radio" name="search" value="base" checked onchange="radioEx('base1')"> 기본 조회	
+		<input type="radio" name="search" value="detail" onchange="radioEx('detail')"> 상세 조회
 	</p>
 	<div>
 	<p>

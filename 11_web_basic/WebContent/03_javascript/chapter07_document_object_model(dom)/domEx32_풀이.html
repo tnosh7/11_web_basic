@@ -1,8 +1,27 @@
 <!DOCTYPE html>
+<!-- 23-07-04 23:52 ~ 24:15-->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function getResult() { 
+		var result="";
+		for (let i = 1; i < 4; i++) {
+			if (document.getElementsByName("line" + i )[0].checked) {
+				var cd = document.getElementsByName("cd" + i)[0].value;
+				var nm = document.getElementsByName("nm" + i)[0].value;
+				var deposit = document.getElementsByName("deposit" +i)[0].value;
+				var withdraw = document.getElementsByName("withdraw" +i)[0].value;
+				result += "cd=" +cd +"&nm=" + nm + "&deposit=" + deposit +"withdraw=" +withdraw;
+			}
+			
+		}
+		console.log(result);
+	}
+
+</script>
 </head>
 <body>
 
@@ -48,7 +67,7 @@
 			<td><input type="text" name="withdraw3"></td>
 		</tr>
 	</table>
-	<input type="button" value="전송" >
+	<input type="button" value="전송" onclick="getResult();">
 	
 </body>
 </html>

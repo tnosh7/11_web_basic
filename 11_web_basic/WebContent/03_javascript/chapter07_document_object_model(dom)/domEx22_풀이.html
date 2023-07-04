@@ -1,8 +1,21 @@
 <!DOCTYPE html>
+<!-- 23-07-04 21:56 ~ 22:07-->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+	function etcRadio(method) {
+		var etcValue = "";
+		if (method == "etc") {
+			etcValue = "<input type='text' size='50' placeholder='이유를 적어주세요.'>"
+						
+		}
+		document.getElementById("etcDetail").innerHTML =etcValue;
+		
+	}
+
+</script>
 </head>
 <body>
 
@@ -21,9 +34,9 @@
 	<fieldset>
 		<p id="target">
 			구매 이유 : 
-			<input type="radio" name="reasonBuy"> 품질이 좋다
-			<input type="radio" name="reasonBuy"> 가성비가 좋다
-			<input type="radio" name="reasonBuy"> 기타&emsp;&emsp;&emsp;
+			<input type="radio" name="reasonBuy" onchange="etcRadio('quality');"> 품질이 좋다
+			<input type="radio" name="reasonBuy" onchange="etcRadio('cheap');"> 가성비가 좋다
+			<input type="radio" name="reasonBuy" onchange="etcRadio('etc');"> 기타&emsp;&emsp;&emsp;
 			<span id="etcDetail"></span>
 		</p>
 	</fieldset>

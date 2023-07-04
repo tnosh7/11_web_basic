@@ -1,8 +1,19 @@
 <!DOCTYPE html>
+<!-- 23-07-04 22:54 ~ 22:57  -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function getPrice() {
+		var deliveryMethod = document.getElementsByName("deliveryMethod");
+		if (deliveryMethod[0].checked) document.getElementById("deliveyrPrice").innerHTML ="무료";
+		if (deliveryMethod[1].checked) document.getElementById("deliveyrPrice").innerHTML = "3000원";
+		
+	}
+
+</script>
 </head>
 <body>
 
@@ -13,8 +24,8 @@
 	
 	 -->
 
-	<input type="radio" name="deliveryMethod" value="rocket" checked > 로켓 배송 &emsp;
-	<input type="radio" name="deliveryMethod" value="nomal"> 일반 배송
+	<input type="radio" name="deliveryMethod" value="rocket" checked onclick="getPrice();"> 로켓 배송 &emsp;
+	<input type="radio" name="deliveryMethod" value="nomal" onclick="getPrice();"> 일반 배송
 
 	<h3>배송비 : <span id="deliveyrPrice">무료</span></h3>
 

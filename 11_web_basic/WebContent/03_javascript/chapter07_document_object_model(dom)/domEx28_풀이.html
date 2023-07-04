@@ -1,8 +1,23 @@
 <!DOCTYPE html>
+<!-- 23-07-04 23:14 ~ 23:24 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function getResult() {
+		var result ="이메일 형식을 확인하여 주세요.";
+		var email = document.getElementById("email").value;
+		for (let index = 0; index < email.length; index++) {
+			if (email[index] == "@") result = "확인되었습니다."
+			
+		}
+
+		document.getElementById("result").innerHTML =result;
+	}
+
+</script>
 </head>
 <body>
 	
@@ -15,7 +30,7 @@
 
 	<p>	
 		email : <input type="text" id="email" name="email" > 
-		<input type="button" value="확인" >
+		<input type="button" value="확인" onclick="getResult();">
 	</p>
 	<span id="result"></span>
 	
