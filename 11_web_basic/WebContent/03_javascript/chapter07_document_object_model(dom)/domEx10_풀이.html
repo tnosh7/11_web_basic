@@ -1,8 +1,35 @@
 <!DOCTYPE html>
+<!-- 23-07-23 20:52 ~ 21:15-->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function answer() { 
+
+		var textValue = document.getElementById("inputBrowser").value;
+		var radioEx = document.getElementsByName("browser");
+		var check = false;
+		for (var i = 0; i < radioEx.length; i++) {
+			if (radioEx[i].value == textValue) {
+				check = true;
+			}
+		}
+		if (check == false) {
+			alert("값이 존재하지 않습니다.");
+			return;
+		}
+		for (var i =0; i < radioEx.length; i++){
+			if (radioEx[i].value == textValue) {
+				radioEx[i].checked = true;
+			}
+		}
+		
+	}
+	
+
+</script>
 </head>
 <body>
 	

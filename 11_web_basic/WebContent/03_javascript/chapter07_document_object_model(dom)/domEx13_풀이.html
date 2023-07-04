@@ -1,8 +1,29 @@
 <!DOCTYPE html>
+<!-- 23-07-03 23:45 ~ 23:51 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function answer() { 
+
+		var subjects = document.getElementsByName("subjects");
+		
+		document.getElementById("result").innerHTML = "";
+		document.getElementById("result").innerHTML += "선택된 과목 : ";
+		
+		for(var i = 0; i < subjects.length; i++){
+			
+			if (subjects[i].checked) {
+				document.getElementById("result").innerHTML += subjects[i].value;
+				document.getElementById("result").innerHTML += " ";
+			}
+		}
+		
+	}
+
+</script>
 </head>
 <body>
 

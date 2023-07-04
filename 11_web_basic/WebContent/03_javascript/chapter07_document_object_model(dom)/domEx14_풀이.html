@@ -1,8 +1,24 @@
 <!DOCTYPE html>
+<!-- 23-07-03 23:54 ~ 24:11-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function answer() {
+
+		var products = document.getElementsByName("products");
+		var totalPrice = 0;
+		if (products[0].checked) totalPrice += Number(document.getElementById("keyboardPrice").innerHTML); 
+		if (products[1].checked) totalPrice += Number(document.getElementById("mousePrice").innerHTML); 
+		if (products[2].checked) totalPrice += Number(document.getElementById("padPrice").innerHTML); 
+
+		document.getElementById("totalPrice").innerHTML = totalPrice;
+	}
+
+
+</script>
 </head>
 <body>
 

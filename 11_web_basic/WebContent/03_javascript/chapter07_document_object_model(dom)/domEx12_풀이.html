@@ -1,8 +1,42 @@
 <!DOCTYPE html>
+<!-- 23-07-23 21:41 ~  -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function setPayMethod() { 
+		var valueName ="";
+		var pay = document.getElementsByName("payMethod");
+		for (var i = 0; pay.length; i++){
+			if (pay[i].checked) {
+				valueName = pay[i].value;
+			}
+		}
+		var text = "";
+		if (valueName == "phone") {
+			text = "핸드폰 번호 : ";
+			text += "<select>";
+			text += "<option value='010'>010</option>";
+			text += "<option value='017'>017</option>";
+			text += "<option value='018'>018</option>";
+			text += "<option value='019'>019</option>";
+			text += "</select> - ";
+			text += "<input type ='text' size='10'> - ";
+			text += "<input type ='text' size='10'>";
+		}
+		else {
+			text = "카드 번호 : ";
+			text += "<input type ='text' size ='10'> - ";
+			text += "<input type ='text' size ='10'> - ";
+			text += "<input type ='text' size ='10'> - ";
+			text += "<input type ='text' size ='10'>";
+		}
+		document.getElementById("target").innerHTML = text;
+	}
+
+</script>
 </head>
 <body>
 
@@ -35,7 +69,7 @@
 			<option value="018">018</option>
 			<option value="019">019</option>
 		</select> - 
-		<input type="text" size="10"> - 
+		<input type="text" size="10" > - 
 		<input type="text" size="10">
 	</p>
 	</div>

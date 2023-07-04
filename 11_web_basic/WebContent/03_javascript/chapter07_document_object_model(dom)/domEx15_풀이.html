@@ -1,8 +1,40 @@
 <!DOCTYPE html>
+<!-- 23-07-04 00:11 ~ 00:32-->
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function answer() { 
+
+		var products = document.getElementsByName("products");
+		var totalPrice =0;
+		var keyboardPrice =0;
+		var mousePrice=0;
+		var padPrice =0;
+
+		if (products[0].checked) {
+			var keyboardQty = document.getElementById("keyboardQty").value;
+			keyboardPrice = Number(document.getElementById("keyboardPrice").innerHTML);
+			keyboardPrice * keyboardQty
+		}
+		if (products[1].checked) {
+			var mouseQty = document.getElementById("mouseQty").value;
+			mousePrice =  Number(document.getElementById("keyboardPrice").innerHTML);
+			mousePrice *= mouseQty;
+		}
+		if (products[2].checked) {
+			var padQty = document.getElementById("padQty").value;
+			padPrice =  Number(document.getElementById("keyboardPrice").innerHTML);
+			padPrice *= padQty;
+		}
+		totalPrice = keyboardPrice + mousePrice + padPrice
+		document.getElementById("totalPrice").innerHTML = totalPrice;
+	}
+
+</script>
 </head>
 <body>
 

@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<!-- 23-07-03 17:14 ~ -->
+<!-- 23-07-03 2차 20:36 ~ 20:40 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
 <script>
 	
-	
-	var values =  document.getElementById("searchType");	
-	var placeholderValue = "";
-	function answer() {
-		
-		if (values.value == "all") placeholderValue="";
-		else if (values.value == "goodId") placeholderValue ="상품번호를 입력하세요";
-		else if (values.value == "goodsTitle") placeholderValue = "상품이름을 입력하세요";
-		else if (values.value == "goodsWriter") placeholderValue = "저자를 입력하세요";
-		else if (values.value == "goodsPublisher") placeholderValue = "출판사를 입력하세요";
+	function answer() { 
+		var placeholderValue = "";
+		var values = document.getElementById("searchType").value;
+		if (values == "all") placeholderValue = "";
+		else if (values == "goodsId") placeholderValue = "상품번호를 입력하세요";
+		else if (values == "goodsTitle") placeholderValue = "상품이름을 입력하세요";
+		else if (values == "goodsWriter") placeholderValue = "저자를 입력하세요";
+		else if (values == "goodsPublisher") placeholderValue = "출판사를 입력하세요";
 
 		document.getElementById("searchWord").placeholder = placeholderValue;
 	}
-
 
 </script>
 </head>

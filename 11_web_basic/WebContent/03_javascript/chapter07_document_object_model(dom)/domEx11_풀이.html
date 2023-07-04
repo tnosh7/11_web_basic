@@ -1,8 +1,42 @@
 <!DOCTYPE html>
+<!-- 23-07-23 21:16 ~ 21:40 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	radioEx = document.getElementsByName("search");
+	function changeSearchMethod() {
+		var check = -1;
+		for(var i = 0; i < radioEx.length; i++) { 
+			if (radioEx[i].value == "detail") {
+				if (radioEx[i].checked == true) {
+					check = 1;
+				}
+			}
+		}
+		if (check == 1) {
+			document.getElementById("category").disabled = false;
+			document.getElementById("keyword").disabled = false;
+			document.getElementById("today").disabled = false;
+			document.getElementById("week1").disabled = false;
+			document.getElementById("month1").disabled = false;
+
+		}
+		else {
+			document.getElementById("category").disabled = true;
+			document.getElementById("keyword").disabled = true;
+			document.getElementById("today").disabled = true;
+			document.getElementById("week1").disabled = true;
+			document.getElementById("month1").disabled = true;
+		}
+
+	}
+	
+
+
+</script>
 </head>
 <body>
 
