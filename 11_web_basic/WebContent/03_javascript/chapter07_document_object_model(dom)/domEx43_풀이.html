@@ -1,8 +1,22 @@
 <!DOCTYPE html>
+<!-- 23-07-05 20:50 ~21:02 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습문제</title>
+<script>
+
+	function checkData() {
+
+		console.log("결제정보 : " + document.pay.payMethod.value);
+		
+		console.log("카드선택 : " + document.pay.card.value);
+		console.log("할부기간 : " + document.pay.payPeriods.value);
+		console.log("휴대폰번호 : " + document.pay.cellphone1.value + " - " + document.pay.cellphone2.value + " - " + document.pay.cellphone3.value);
+		
+	}
+
+</script>
 </head>
 <body>
 
@@ -12,21 +26,21 @@
 		<fieldset>
 			<p>
 				<strong>결제방법 : </strong>
-				<input type="radio" checked>신용카드 &emsp; 
-				<input type="radio">제휴 신용카드 &emsp;
-				<input type="radio">실시간 계좌이체 &emsp;
-				<input type="radio">무통장 입금&emsp;
+				<input type="radio" name="payMethod" value="신용카드" checked>신용카드 &emsp; 
+				<input type="radio" name="payMethod" value="제휴 신용카드">제휴 신용카드 &emsp;
+				<input type="radio" name="payMethod" value="실시간 계좌이체">실시간 계좌이체 &emsp;
+				<input type="radio" name="payMethod" value="무통장 입금">무통장 입금&emsp;
 			</p>
 			<p>
-				<input type="radio">휴대폰 결제 &emsp;
-				<input type="radio"> 카카오페이(간편결제) &emsp;
-				<input type="radio"> 페이나우(간편결제) &emsp;
-				<input type="radio">페이코(간편결제) &emsp;
-				<input type="radio" value="직접입금">직접입금 &emsp;
+				<input type="radio" name="payMethod" value="무통장 입금">휴대폰 결제 &emsp;
+				<input type="radio" name="payMethod" value="카카오페이(간편결제)">카카오페이(간편결제) &emsp;
+				<input type="radio" name="payMethod" value="페이나우(간편결제)">페이나우(간편결제) &emsp;
+				<input type="radio" name="payMethod" value="페이코(간편결제)">페이코(간편결제) &emsp;
+				<input type="radio" value="직접입금" name="payMethod">직접입금 &emsp;
 			</p>
 			<p>
 				<strong>카드선택 : </strong>
-				<select>
+				<select name="card">
 					<option selected>삼성</option>
 					<option>하나SK</option>
 					<option>현대</option>
@@ -40,7 +54,7 @@
 			</p>
 			<p>
 				<strong>할부기간 : </strong>
-				<select>
+				<select name="payPeriods">
 					<option selected>일시불</option>
 					<option>2개월</option>
 					<option>3개월</option>
@@ -51,9 +65,9 @@
 			</p>	
 			<p>
 				<strong>휴대폰 번호 : </strong>
-				<input type="text" size="5"/>-
-				<input type="text" size="5"/>-
-				<input type="text" size="5"/>
+				<input type="text" size="5" name="cellphone1"/>-
+				<input type="text" size="5" name="cellphone2"/>-
+				<input type="text" size="5" name="cellphone3"/>
 			</p>
 			<p>
 				<input type="button" value="확인" onclick="checkData()">

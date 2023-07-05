@@ -1,8 +1,72 @@
 ﻿<!DOCTYPE html>
+<!-- 23-07-05 21:11 ~ 21:31-->
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script>
+
+	function valCheck() {
+		var name = document.form.name;
+		if (name.value=="") {
+			alert("이름을 입력하세요.");
+			name.focus();
+			return false;
+		}
+		var id = document.form.id;
+		if (id.value=="") {
+			alert("아이디를 입력하세요.");
+			id.focus();
+			return false;
+		}
+		
+		var password = document.form.password;
+		if (password.value == "") {
+			alert("비밀번호를 입력하세요");
+			password.focus();
+			return false;
+		}
+		var gender= document.form.gender;
+		if (gender.value=="") {
+			alert("성별을 선택해주세요");
+			gender.focus();
+			return false;
+		}
+		var livingPlace = document.form.livingPlace;
+		if (livingPlace.value=="지역") {
+			alert("지역을 선택하세요");
+			livingPlace.focus();
+			return false;
+		}
+		if (document.form.emailId.value=="" || document.form.emailAddress.value=="") {
+			alert("이메일을 입력해주세요.");
+			document.form.emailId.focus();
+			return false;
+		}
+		var emailOX = document.form.emailOX;
+		if (emailOX.value=="") {
+			alert("이메일 허용여부를 선택해주세요.");
+			emailOX.focus();
+			return false;
+		}
+		var job = document.form.job;
+		if(job.value=="직업") { 
+			alert("직업을 선택해주세요.");
+			job.focus();
+			return false;
+		}
+		var introduceMyself = document.form.introduceMyself;
+		if (introduceMyself.value =="") {
+			alert("자기소개를 적어주세요");
+			introduceMyself.focus();
+			return false;
+		}
+		return true;
+	}
+
+</script>
+</head>
 <body>
 	
 	<!-- 
@@ -16,20 +80,20 @@
 		
 	-->
 
-    <form name="form">
+    <form name="form" onsubmit="return valCheck();">
 		<fieldset>
 			<legend>회원 가입 화면</legend>
-			<p>이름 : <input type="text"></p>
-            <p>아이디 : <input type="text">
+			<p>이름 : <input type="text" name="name"></p>
+            <p>아이디 : <input type="text" name="id">
             	( 아이디는 12자 이내로 입력하세요 <input type="button" value="아이디중복확인"> )
           	</p>
-            <p>비밀번호 : <input type="password" ></p>
+            <p>비밀번호 : <input type="password" name="password"></p>
             <p>성별 :
-            	<input type="radio" value="male" >남
-            	<input type="radio" value="female">여
+            	<input type="radio" value="male" name="gender">남
+            	<input type="radio" value="female" name="gender">여
             </p>
     		<p>사는 지역 : 
-				<select>
+				<select name="livingPlace">
 					<option>지역</option>
 					<option>서울특별시</option>
 					<option>경기도</option>
@@ -43,13 +107,13 @@
 				</select>
 			</p>
    			<p>
-				이메일주소 : <input type="text" size="15" > @ <input type="text" size="15" >
+				이메일주소 : <input type="text" size="15" name="emailId"> @ <input type="text" size="15" name="emailAddress">
 				(이메일수신허용
-				<input type="radio">허용
-				<input type="radio">거부)
+				<input type="radio" name="emailOX">허용
+				<input type="radio" name="emailOX">거부)
 			</p>
 			<p>직업
-				<select>
+				<select name="job">
 					<option>직업</option>
 					<option>학생</option>
 					<option>회사원</option>
@@ -57,7 +121,7 @@
 				</select>
 			</p>  
 			<p>자기소개<br>
-				<textarea rows="5" cols="50"></textarea>
+				<textarea rows="5" cols="50" name="introduceMyself"></textarea>
 			</p>
 			<p>
 				<input type="submit" value="확인" />

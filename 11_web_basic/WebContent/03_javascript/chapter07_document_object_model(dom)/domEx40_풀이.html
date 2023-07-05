@@ -1,26 +1,32 @@
 <!DOCTYPE html>
+<!-- 23-07-05 20:15 ~ 20:23 -->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
 <script> 
-	function checkData() {
-		console.log("이름 :" + document.f.name.value);
-		console.log("아이디 : " + document.f.id.value);
-		console.log("비밀번호 : " + document.f.password.value);
-		console.log("나이 : " + document.f.age.value);
-		console.log("성별 : " + document.f.gender.value);
-	
-		var hobby = document.getElementsByName("hobby");
-		for (let index = 0; index < hobby.length; index++) {
-			if (hobby[index].checked) {
-				console.log("취미 : " + hobby[index].value);
-			}
-		}
-		console.log("가고 싶은 여행지 : " + document.f.place.value);
-		console.log("메모 : " + document.f.meno.value);
-	}
 
+		function checkData() { 
+
+			console.log("이름 : " + document.f.name.value);
+			console.log("아이디 : " + document.f.id.value);
+			console.log("비밀번호 : " + document.f.password.value);
+			console.log("나이 : " + document.f.age.value);
+			console.log("성별 : " + document.f.gender.value);
+
+			var hobby= document.f.hobby;
+			for (let index = 0; index < hobby.length; index++) {
+				if(hobby[index].checked = true) {
+					console.log("취미 : " + hobby[index].value);
+					
+				}
+			}
+			console.log("가고 싶은 여행지 : " + document.f.travel.value);
+			console.log("메모 : " + document.f.memo.value);
+
+		}
+	
+	
 </script>
 </head>
 <body>
