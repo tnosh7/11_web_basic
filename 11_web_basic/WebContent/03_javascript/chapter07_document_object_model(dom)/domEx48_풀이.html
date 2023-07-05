@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습문제</title>
+<script> 
+
+	function valCheck() { 
+
+		var payMethod = document.pay.payMethod;
+		if (payMethod.checked == false) {
+			alert("결제방법을 선택해주세요.");
+			payMethod.focus();
+			return false;
+		}
+		var card = document.pay.card;
+		if (card.value == "없음") { 
+			alert("카드를 선택해주세요.");
+			card.focus();
+			return false;
+		}
+		var payMonth = document.pay.payMonth;
+		if (payMonth.value =="없음") {
+			alert("할부기간을 선택해주세요.");
+			payMonth.focus();
+			return false;
+		}
+		var phone1 = document.pay.phone1; 
+		if (phone1 == "") {
+			alert("전화번호를 입력해주세요.");
+			phone1.focus();
+			return false;
+		}
+		return true;
+	}
+
+
+</script>
+</head>
+<body>
+
+	<!-- 
+	
+		# 입력하지 않은 필드의 값을 검증하여 
+		
+			1) alert으로 안내
+			2) focus로 이동
+			
+			하는 스크립트를 작성해 보시오. 
+		
+	-->
+
+	<form name="pay" onsubmit="return valCheck();">
+		<fieldset>
+			<p>
+				<strong>결제방법 : </strong>
+				<input type="radio" value="신용카드" name="payMethod">신용카드 &emsp; 
+				<input type="radio" value="제휴 신용카드" name="payMethod" >제휴 신용카드 &emsp;
+				<input type="radio" value="실시간 계좌이체" name="payMethod">실시간 계좌이체 &emsp;
+				<input type="radio" value="무통장 입금" name="payMethod">무통장 입금&emsp;
+			</p>
+			<p>
+				<strong>카드선택 : </strong>
+				<select name="card">
+					<option>없음</option>
+					<option>삼성</option>
+					<option>하나SK</option>
+					<option>현대</option>
+					<option>KB</option>
+					<option>신한</option>
+					<option>롯데</option>
+					<option>BC</option>
+					<option> 시티</option>
+					<option>NH농협</option>
+				</select>
+			</p>
+			<p>
+				<strong>할부기간 : </strong>
+				<select name="payMonth">
+					<option>없음</option>
+					<option>일시불</option>
+					<option>2개월</option>
+					<option>3개월</option>
+					<option>4개월</option>
+					<option>5개월</option>
+					<option>6개월</option>
+				</select>
+			</p>	
+			<p>
+				<strong>휴대폰 번호 : </strong>
+				<input type="text" size="5" name="phone1"/>-
+				<input type="text" size="5" name="phone1"/>-
+				<input type="text" size="5" name="phone1"/>
+			</p>
+			<p>
+				<input type="submit" value="확인" />
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>
