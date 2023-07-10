@@ -33,135 +33,118 @@ INSERT INTO CAR VALUES ('car19', '티볼리', 25500, '쌍용', '소형' , '2021-
 INSERT INTO CAR VALUES ('car20', '코란도', 59700, '쌍용', '준중형' , '2021-09-09');
 
 # 1) 기아 브랜드 차량의 전체 컬럼 조회하기
-SELECT 
-		*
-FROM 
-		CAR
-WHERE
-		BRAND_NM = '기아';
+
 
 # 2) 기아 브랜드가 아닌 차량의 전체 컬럼 조회하기
-SELECT 
-		*
-FROM 
-		CAR;
+
 
 # 3) 현대와 쌍용 브랜드의 전체 컬럼 조회하기
-SELECT 
-		*
-FROM 
-		CAR
-WHERE 
-		BRAND_NM = '현대' OR BRAND_NM = '쌍용';
+
 
 # 4) 대형차가 아닌 차량의 전체 컬럼 조회하기
-SELECT 
-		*
-FROM 
-		CAR
-WHERE 
-        CATEGORY <> '대형';  # NOT(CATEGORY = '대형');
+
 
 # 5) 소형차와 대형차의 전체 컬럼 조회하기
-SELECT 
-		*
-FROM 
-		CAR 
-WHERE 
-		CATEGORY = '소형' OR CATEGORY = '대형';
+
 
 # 6) 준중형차와 중형차의 전체 컬럼 조회하기
-SELECT 	
-		*
-FROM 
-		CAR 
-WHERE 
-		CATEGORY = '준중형' OR CATEGORY = '중형';
+
 
 # 7) 중형차중 르노 브랜드의 전체 컬럼 조회하기
-SELECT 
-		*
-FROM 
-		CAR 
-WHERE 
-		BRAND_NM = '르노' AND CATEGORY = '중형';
+
 
 # 8) 2021년에 등록된 차량의 전체 컬럼 조회하기
-SELECT 
-		*
-FROM 
-		CAR 
-WHERE 
-		REG_DT >= '2021-01-01' AND REG_DT <= '2021-12-31';
+
 
 # 9) 렌트비용이 50000 ~ 100000사이 차량의 전체 컬럼 조회하기
-SELECT 	
-		*
-FROM 
-		CAR 
-WHERE
-        PRICE BETWEEN 50000 AND 100000; #PRICE >= 50000 AND PRICE <= 100000;
+
 
 # 10) 기아브랜드 이며 렌트비용이 100000 ~ 200000인 차량의 전체 컬럼 조회하기
-SELECT 
-		* 
-FROM 	
-		CAR 
-WHERE 
-		PRICE >= 100000 AND PRICE <= 200000;
+
 
 # 11) 현대브랜드 차량중 대형차량만 조회하기
-SELECT 
-		* 
-FROM 
-		CAR 
-WHERE 	
-		BRAND_NM = '현대' AND CATEGORY = '대형';
+
 
 # 12) 차량의 전체 컬럼 조회하기 (렌트 가격이 많은 차량 순서)
-SELECT 
-		*
-FROM 	
-		CAR 
-ORDER BY
-		PRICE DESC;
+
 
 # 13) 차량의 전체 컬럼 조회하기 (렌트 가격이 적은 차량 순서)
-SELECT 
-		*
-FROM 
-		CAR 
-ORDER BY 
-		PRICE;
+
 
 # 14) 차량의 전체 컬럼 조회하기 (렌트 가격이 적은 차량 순서 , 브랜드 이름이 ㄱ~ㄴ순서 , 차량이름이 ㄱ~ㄴ순서)
-SELECT 
-		* 
-FROM 
-		CAR 
-ORDER BY 
-		PRICE, 
-        BRAND_NM, 
-        CAR_NM;
+
 
 # 15) 차량의 전체 컬럼 조회하기 (렌트 가격이 많은 차량 순서의 3개의 차량)
-SELECT 
-		*
-FROM 
-		CAR 
-ORDER BY 
-		PRICE DESC
-LIMIT 
-		3;
+
 
 # 16) 차량의 전체 컬럼 조회하기 (렌트 가격이 적은 차량 순서 , 차량이름이 ㄱ~ㄴ순서의 3개의 차량)
-SELECT 
-		*
-FROM 	
-		CAR 
-ORDER BY 	
-		PRICE,
-		CAR_NM
-LIMIT 
-		3;
 
+
+# 17) 아반떼 차량의 렌트가격을 40000원 으로 지정하기. 
+SELECT * FROM CAR;
+UPDATE CAR 
+SET 	PRICE = 40000
+WHERE 	CAR_NM = '아반떼';
+COMMIT;
+# 18) 카니발 차량의 렌트가격을 현재 가격에서 -20000원 할인하기. 
+UPDATE 
+		CAR 
+SET 
+		PRICE = PRICE -20000
+WHERE 
+		CAR_NM = '카니발';
+COMMIT;
+
+# 19) 현대브랜드 차량의 렌트가격을 현재 가격에서  -3000원 할인하기.
+UPDATE 
+		CAR 
+SET 
+		PRICE = PRICE -3000
+WHERE 
+		BRAND_NM = '현대';
+COMMIT;
+
+# 20) 대형 차량의 가격을 현재 가격에서 + 10000원 증가하기
+UPDATE 
+		CAR 
+SET 
+		PRICE = PRICE + 10000
+WHERE 
+		CATEGORY = '대형';
+COMMIT;
+
+# 21) 코란도 차량의 등록날짜를 현재시간으로 변경하기
+UPDATE 
+		CAR 
+SET 
+		REG_DT = NOW() 
+WHERE 
+		CAR_NM = '코란도';
+COMMIT;
+
+# 22) 아반떼 차량을 삭제하기
+DELETE FROM CAR WHERE CAR_NM = '아반떼';
+COMMIT; 
+
+# 23) K3,K5,K7,K9차량을 삭제하기
+DELETE FROM 
+			CAR 
+WHERE 
+			CAR_NM = 'K3' OR CAR_NM = 'K5' OR CAR_NM = 'K7' OR CAR_NM = 'K9';
+COMMIT;
+SELECT * FROM CAR;
+# 24) 현대브랜드 차량을 삭제하기
+DELETE FROM 
+			CAR 
+WHERE 
+			BRAND_NM = '현대';
+COMMIT;
+
+# 25) 2021년도에 등록된 차량을 삭제하기
+DELETE FROM 
+		CAR
+WHERE 
+		REG_DT >= '2021-01-01' AND REG_DT <= '2021-12-31';
+COMMIT;
+SELECT * FROM CAR; 
+ 

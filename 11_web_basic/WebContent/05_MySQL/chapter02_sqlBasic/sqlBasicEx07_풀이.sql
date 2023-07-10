@@ -30,133 +30,73 @@ INSERT INTO EMP VALUES (7934 , 'MILLER' , 'CLERK' , '1982-01-23' , 1300 , NULL ,
 
 
 # 1) 사원 테이블의 모든 레코드를 조회하시오.
-SELECT 	
-		*
-FROM 
-	EMP; 
+
 
 # 2) 사원명과 입사일을 조회하시오.
-SELECT 
-		NAME, HIRE_DATE 
-FROM 
-		EMP; 
 
 
 # 3) 사원번호와 이름을 조회하시오.	
-SELECT 
-		NAME, EMP_NO
-FROM 	
-		EMP;
+
 
 # 4) 사원테이블에 있는 직책의 목록(중복제거)을 조회하시오.
-SELECT DISTINCT
-		JOB 
-FROM 
-		EMP;
+
+
 # 5) 부서번호가 10인 사원을 조회하시오.
-SELECT 
-		*
-FROM 	
-		EMP
-WHERE 	
-		DEPT_NO = 10;
+
+
 # 6) 월급여가 2500이상 되는 사원을 조회하시오.
-SELECT 
-		*
-FROM 	
-		EMP
-WHERE 
-		SALARY >= 2500;
+
+
 # 7) 이름이 'KING'인 사원을 조회하시오.
-SELECT 
-		*
-FROM 
-		EMP
-WHERE 
-		NAME LIKE 'KING%'; 
+
 
 # 8) 사원중 이름이 S로 시작하는 사원의 사원번호와 이름을 조회하시오.
-SELECT 
-		EMP_NO, NAME  
-FROM 
-		EMP
-WHERE 
-		NAME LIKE 'S%'
-	
-		
+
+
 # 9) 사원 이름에 T가 포함된 사원의 사원번호와 이름을 조회하시오.
-SELECT 
-		EMP_NO, NAME 
-FROM 
-		EMP
-WHERE 
-		NAME LIKE '%T%';
+
 
 # 10) 커미션이 300,500,1400인 사원의 사번,이름,커미션을 조회하시오.
-SELECT 
-		EMP_NO, NAME, COMM
-FROM 
-		EMP
-WHERE 
-		COMM = 300 OR COMM = 500 OR COMM = 1400;
+
 
 # 11) 월급여가 1200에서 3500 사이의 사원의 사번,이름,월급여를 조회하시오.  
-SELECT 
-		EMP_NO, NAME, SALARY
-FROM 
-		EMP
-WHERE 
-		SALARY >= 1200 AND SALARY <= 3500;
-        # SALARY BETWEEN 1200 AND 3500;
+
 
 # 12) 직급이 매니저이고 부서번호가 30번인 사원의 이름,사번,직급,부서번호를 조회하시오.
-SELECT 	
-		EMP_NO, NAME, DEPT_NO, JOB
-FROM
-		EMP 
-WHERE 
-		JOB = 'MANAGER' AND DEPT_NO = 30;
+
 
 # 13) 부서번호가 30이 아닌 사원의 사번,이름,부서번호를 조회하시오.
-SELECT 	
-		EMP_NO, NAME, DEPT_NO
-FROM
-		EMP 
-WHERE 
-		DEPT_NO <> 30;
+
 
 # 14) 커미션이 300, 500, 1400 이 모두 아닌 사원의 사번,이름,커미션을 조회하시오.
-SELECT 
-		EMP_NO, NAME, COMM 
-FROM 
-		EMP 
-WHERE 
-		NOT(COMM = 300 OR COMM = 500 OR COMM =1400);
-		
+
+
 # 15) 이름에 S가 포함되지 않는 사원의 사번,이름을 조회하시오.
-SELECT 
-		EMP_NO, NAME 
-FROM 
-		EMP
-WHERE 
-		NOT NAME LIKE '%S%';
+
 
 # 16) 급여가 1200보다 미만이거나 3700 초과하는 사원의 사번,이름,월급여를 조회하시오.
-SELECT 
-		EMP_NO, NAME, SALARY 
-FROM 
-		EMP 
-WHERE 
-		SALARY < 1200 OR SALARY > 3700; 
-        
+
 
 # 17) 급여가 높은 순으로 조회하되 급여가 같을 경우 이름의 알파벳이 빠른 사원순으로 사번,이름,월급여를 조회하시오. 
-SELECT 
-		EMP_NO, NAME, SALARY 
-FROM 
-		EMP
-ORDER BY 
-		SALARY DESC,
-        NAME;
-        
 
+T
+# 18) 부서번호가 10인 직원의 급여를 + 1000으로 수정하시오.
+SELECT * FROM EMP;
+
+        
+# 19) 이름이 'SMITH'인 직원의 입사일자를 '1980-12-18'일로 수정하시오.
+
+
+# 20) 직책이 'PRESIDENT'인 직원의 커미션을 3000으로 수정하시오.
+
+
+# 21) '1981'년에 입사한 직원의 급여를 기존급여에 +10으로 수정하시오.
+
+
+# 22) 이름이 'WARD'인 사원을 테이블에서 삭제하시오.
+
+		
+# 23) 부서번호가 30인 직원을 테이블에서 삭제하시오.  
+
+   
+# 24) 사원번호 7900 , 7902 , 7934를 테이블에서 삭제하시오.  
