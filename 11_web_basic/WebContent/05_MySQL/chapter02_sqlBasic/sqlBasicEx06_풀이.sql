@@ -33,52 +33,91 @@ INSERT INTO CAR VALUES ('car19', '티볼리', 25500, '쌍용', '소형' , '2021-
 INSERT INTO CAR VALUES ('car20', '코란도', 59700, '쌍용', '준중형' , '2021-09-09');
 
 # 1) 기아 브랜드 차량의 전체 컬럼 조회하기
-
+SELECT * FROM CAR;
 
 # 2) 기아 브랜드가 아닌 차량의 전체 컬럼 조회하기
-
+SELECT * FROM CAR 
+WHERE NOT BRAND_NM = '기아';
 
 # 3) 현대와 쌍용 브랜드의 전체 컬럼 조회하기
-
+SELECT *
+FROM CAR
+WHERE BRAND_NM = '현대' OR BRAND_NM = '쌍용';
 
 # 4) 대형차가 아닌 차량의 전체 컬럼 조회하기
-
+SELECT 
+		*
+FROM 
+		CAR
+WHERE
+		NOT CATEGORY = '대형';
 
 # 5) 소형차와 대형차의 전체 컬럼 조회하기
-
+SELECT *
+FROM 	CAR 
+WHERE CATEGORY = '소형' OR CATEGORY = '대형';
 
 # 6) 준중형차와 중형차의 전체 컬럼 조회하기
-
+SELECT 
+		*
+FROM 
+		CAR
+WHERE CATEGORY = '준중형' OR CATEGORY = '중형';
 
 # 7) 중형차중 르노 브랜드의 전체 컬럼 조회하기
-
+SELECT 
+		*
+FROM 	
+		CAR 
+WHERE 
+		BRAND_NM = '르노';
 
 # 8) 2021년에 등록된 차량의 전체 컬럼 조회하기
-
+SELECT * FROM CAR 
+WHERE REG_DT >= '2021-01-01' AND REG_DT <= '2021-12-31';
 
 # 9) 렌트비용이 50000 ~ 100000사이 차량의 전체 컬럼 조회하기
-
+SELECT * FROM CAR 
+WHERE PRICE >= 50000 AND PRICE <= 100000;
 
 # 10) 기아브랜드 이며 렌트비용이 100000 ~ 200000인 차량의 전체 컬럼 조회하기
-
+SELECT * FROM CAR 
+WHERE BRAND_NM = '기아' 
+	AND (PRICE >=100000 AND PRICE <= 200000);
 
 # 11) 현대브랜드 차량중 대형차량만 조회하기
-
+SELECT * FROM CAR 
+WHERE 
+	BRAND_NM ='현대' 
+AND 
+	CATEGORY ='대형';
 
 # 12) 차량의 전체 컬럼 조회하기 (렌트 가격이 많은 차량 순서)
-
+SELECT * 
+FROM CAR 
+ORDER BY PRICE DESC;
 
 # 13) 차량의 전체 컬럼 조회하기 (렌트 가격이 적은 차량 순서)
-
+SELECT *
+FROM CAR 
+ORDER BY PRICE;
 
 # 14) 차량의 전체 컬럼 조회하기 (렌트 가격이 적은 차량 순서 , 브랜드 이름이 ㄱ~ㄴ순서 , 차량이름이 ㄱ~ㄴ순서)
-
+SELECT * 
+FROM CAR 
+ORDER BY PRICE , BRAND_NM, CAR_NM;
 
 # 15) 차량의 전체 컬럼 조회하기 (렌트 가격이 많은 차량 순서의 3개의 차량)
-
+SELECT *
+FROM CAR 
+ORDER BY PRICE
+LIMIT 3;
 
 # 16) 차량의 전체 컬럼 조회하기 (렌트 가격이 적은 차량 순서 , 차량이름이 ㄱ~ㄴ순서의 3개의 차량)
-
+SELECT * 
+FROM CAR 
+ORDER BY PRICE, CAR_NM
+LIMIT 3;
 
 # 17) 아반떼 차량의 렌트가격을 40000원 으로 지정하기. 
 SELECT * FROM CAR;

@@ -2,7 +2,8 @@
     1) BOOKSHOP_TEMP 데이터베이스를 생성하고 사용하기.
 */	
 
-
+CREATE DATABASE BOOKSHOP_TEMP;
+USE BOOKSHOP_TEMP;
 
 /*    
     2) MANAGER 테이블을 생성하기.
@@ -13,7 +14,11 @@
 		PASSWD 	   (글자 500)
 */
 
+CREATE TABLE MANAGER (
 
+	MANAGER_ID VARCHAR(20),
+    PASSWD VARCHAR(500)
+);
 
 /*    
 
@@ -29,7 +34,14 @@
 		TEL 	  글자(20)
         
 */
-
+CREATE TABLE MAMBER (
+	MEMBER_ID VARCHAR(20),
+    MEMBER_NM VARCHAR(20),
+    PASSWD VARCHAR(16),
+    REG_DT DATETIME,
+    ADDRESS VARCHAR(100),
+    TEL VARCHAR(20)
+);
 
 
 /*    
@@ -47,6 +59,16 @@
 		DISCOUNT_RATE 	숫자	
 */
 
+CREATE TABLE BOOK (
+	BOOK_CD VARCHAR(100),
+    TITLE VARCHAR(100),
+    BOOK_PRICE INT,
+    AUTHOR VARCHAR(40),
+    PUBLISHING_COM VARCHAR(30),
+	PUBLISHING_DT DATETIME,
+    CONTENT	VARCHAR(500),
+    DISCOUNT_RATE	INT 
+);
 
 
 /*    
@@ -64,7 +86,16 @@
 		BOOK_IMAGE 	글자(100)
         
 */
+CREATE TABLE CART (
 
+	CART_CD VARCHAR(100),
+    BOOK_CD VARCHAR(100),
+    BUYER VARCHAR(50),
+	BOOK_TUTLE VARCHAR(100),
+    BUY_PRICE INT,
+    BUY_CNT INT,
+    BOOK_IMAGE VARCHAR(100)
+);
 
 
 /*    
@@ -85,6 +116,21 @@
 		DELIVERY_ADRESS 글자(10)
         
 */
+CREATE TABLE BUY (
+		BUY_ID 		    VARCHAR(100),
+		BUYER 		   	VARCHAR(50),
+		BOOK_CD 	   	VARCHAR(12),
+		BOOK_TITLE     	VARCHAR(100),
+		BUY_TOT_PRICE   INT,
+		BUY_CNT        	INT,
+		BUY_DT 	   		DATETIME,
+		DELIVERY_NAME   VARCHAR(10),
+		DELIVERY_TEL    VARCHAR(20),
+		DELIVERY_ADRESS VARCHAR(10)
+
+
+
+);
 
 
 
@@ -98,7 +144,13 @@
 		BANK_NM    (글자 10)
         ACCOUNT_ID (글자 30)
 */
+CREATE TABLE BANK (
 
+		BANK_CD VARCHAR(10),
+        BANK_NM VARCHAR(10),
+        ACCOUNT_ID VARCHAR(30)
+
+);
 
 
 /*    
@@ -115,36 +167,45 @@
         
 */
 
+CREATE TABLE QNA (
+		QNA_CD 		VARCHAR(100),
+		BOOK_CD 	VARCHAR(100),
+		QNA_WRITER  VARCHAR(20),
+		QNA_CONTENT VARCHAR(500),
+		REG_DT 		DATETIME
 
+
+);
 
  /*
 	9) MANAGER테이블 삭제하기.
  */
-
+DROP TABLE MANAGER;
  /*
 	10) MEMBER테이블 삭제하기.
  */
-
+DROP TABLE MEMBER;
  /*
 	11) BOOK테이블 삭제하기.
  */
- 
+ DROP TABLE BOOK;
  /*
 	12) CART테이블 삭제하기
  */
- 
+ DROP TABLE CART;
  /*
 	13) BUY테이블 삭제하기.
   */
- 
+ DROP TABLE BUY;
  /*
 	14) BANK테이블 삭제하기.
  */
-
+DROP TABLE BANK;
  /*
 	15) QNA테이블 삭제하기.
  */
- 
+ DROP TABLE QNA;
  /*   
     16) BOOKSHOP_TEMP데이터 베이스 삭제하기.
  */
+DROP DATABASE BOOKSHOP_TEMP;

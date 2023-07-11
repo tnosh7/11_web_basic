@@ -28,61 +28,95 @@ INSERT INTO BOOK VALUES(12, '초등학생이 알아야할 숫자', 22000, 0, '�
 
 
 # 1) 책 전체 컬럼을 조회하기 (책 제목 ㄱ~ㅎ 순서)
+SELECT * FROM BOOK
+ORDER BY TITLE;
 	
 		
 # 2) 책 전체 컬럼을 조회하기 (책 제목 ㄱ~ㅎ 순서 , 가격이 비싼 순서)
-		
+SELECT * FROM BOOK
+ORDER BY TITLE , PRICE DESC;		
 		
 # 3) 책 전체 컬럼을 조회하기 (책 제목 ㄱ~ㅎ 순서 , 저자명 ㄱ~ㅎ순서)
-
+SELECT * FROM BOOK
+ORDER BY TITLE, AUTHOR;
 		
 # 4) 책 전체 컬럼을 조회하기 (가장 많이 팔린 책 순서 , 책 제목 ㄱ~ㅎ 순서) 
-		
+SELECT * FROM BOOK
+ORDER BY TITLE;		
 		
 # 5) 책 전체 컬럼을 조회하기 (최신 등록된 순서)
-		
+SELECT * FROM BOOK
+ORDER BY PUBLISHING_DT DESC;		
 		
 # 6) 책 전체 컬럼을 조회하기 (최신 등록된 순서 , 책 제목 ㄱ~ㅎ순서)
-
+SELECT * FROM BOOK
+ORDER BY PUBLISHING_DT DESC, TITLE;
 		
 # 7) 제목,가격,할인률을 조회하기 컬럼을 조회하기 (할인률이 높은 순서 , 가격이 낮은 순서)
-
+SELECT TITLE, PRICE, DISCOUNT_RATE FROM BOOK
+ORDER BY DISCOUNT_RATE DESC, PRICE;
 		
 # 8) 제목,가격,출판사,판매량을 조회하기(가장 많이 팔린 3곳)
-		
+SELECT TITLE, PRICE, PUBLISHING_COM, SALES_CNT FROM BOOK
+ORDER BY SALES_CNT DESC
+LIMIT 3;		
 		
 # 9) 제목,가격,출판사,판매량을 조회하기(가장 적게 팔린 3곳)
-
+SELECT TITLE, PRICE, PUBLISHING_COM, SALES_CNT FROM BOOK
+ORDER BY SALES_CNT 
+LIMIT 3;
 
 # 10) 판매량이 100개 이하인 책 전체 컬럼을 조회하기
-		
+SELECT * FROM BOOK
+WHERE SALES_CNT <= 100;		
 
 # 11) 가격이 10000~20000사이인 책의 전체컬럼을 조회하기
-
+SELECT * FROM BOOK
+WHERE PRICE >= 10000 AND PRICE <=20000;
 		
 # 12) 가격 , 가격에 부가세를 10%를 계산한 컬럼과 , 부가세를 10%를 더한 컬럼조회하기
-
+SELECT	PRICE ,
+		PRICE * 0.1 AS TAX, 
+        PRICE + (PRICE * 0.1) AS ADDTAX 
+FROM BOOK
 		
 # 13) 가격 , 할인률 , 가격에 할인률을 적용한 컬럼을 조회하기
-
+SELECT	PRICE, DISCOUNT_RATE,
+		PRICE - PRICE * (DISCOUNT_RATE * 0.01) AS DISCOUNT_PRICE 
+FROM 	BOOK;
 		
 # 14) 가격 , 할인률 , 10%부가세 , 가격에 할인률을 적용하고 원가의 10%를 더한 책의 전체 컬럼을 조회하기
-
+SELECT 	PRICE , DISCOUNT_RATE, 
+		PRICE * 0.1 AS TAX, 
+        PRICE + (PRICE * 0.1) AS TOTAL_PRICE
+FROM 	BOOK;
 
 # 15) '나미야 잡화점의 기적' 의 할인률을 5로 변경하기.
-		
+UPDATE BOOK
+SET 	DISCOUNT_RATE = 5
+WHERE TITLE = '나미야 잡화점의 기적';
 
 # 16) '인간 실격'의 판매량을 10증가하기.
-
+UPDATE BOOK
+SET 	SALES_CNT = SALES_CNT + 10
+WHERE TITLE = '인간 실격';
 		
 # 17) 할인률이 20이 넘은 데이터들의 할인률을 10으로 변경하기.
-		
+UPDATE BOOK
+SET DISCOUNT_RATE = 10
+WHERE DISCOUNT_RATE >= 20; 		
 
 # 18) 출판일이 2015년 이전의 판매량과 할인률을 0으로 변경하기
-
+SELECT * FROM BOOK;
+UPDATE BOOK
+SET SALES_CNT = 0, DISCOUNT_RATE = 0
+WHERE PUBLISHING_DT <= '2015-01-01';
 
 # 19) '컴퓨터활용능력' , '초등학생이 알아야할 숫자' 데이터를 삭제하기
-
+DELETE FROM BOOK
+WHERE TITLE = '컴퓨터활용능력' OR TITLE= '초등학생이 알아야할 숫자';
 
 # 20) 출판일이 2015년 이전의 데이터를 삭제하기
-		
+DELETE FROM BOOK
+WHERE PUBLISHING_DT <= '2015-01-01';
+COMMIT;

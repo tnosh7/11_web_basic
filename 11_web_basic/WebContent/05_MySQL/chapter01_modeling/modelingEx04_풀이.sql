@@ -145,42 +145,48 @@ CREATE TABLE GOODS_TB(
 		DELIVERY_STATUS 	글자(100)
 */
 
-create table order_tb(
-	order_id int.
-    member_id varchar(50),
-    goods_id int,
-    goods_title varchar(100),
-    goods_sales_price int,
-    orderer_name varchar(50),
-    orderer_hp varchar(50),
-    order_goods_qty int,
-    receiver_namer varchar(50),
-    receiver_hp1 varchar(20),
-	receiver_hp2 varchar(20),
-	receiver_hp3 varchar(20),
-    receiver_tel1 varchar(20),
-	receiver_tel2 varchar(20),
-	receiver_tel3 varchar(20),
-    delivery_address varchar(500),
-    delivery_method varchar(40),
-    delivery_message varchar(300),
-    
-    
+CREATE TABLE ORDER_TB(
+	ORDER_ID INT,
+    MEMBER_ID VARCHAR(50),
+    GOODS_ID INT,
+    GOODS_TITLE VARCHAR(100),
+    GOODS_SALES_PRICE INT,
+    ORDERER_NAME VARCHAR(50),
+    ORDERER_HP VARCHAR(50),
+    ORDER_GOODS_QTY INT,
+    RECEIVER_NAMER VARCHAR(50),
+    RECEIVER_HP1 VARCHAR(20),
+	RECEIVER_HP2 VARCHAR(20),
+	RECEIVER_HP3 VARCHAR(20),
+    RECEIVER_TEL1 VARCHAR(20),
+	RECEIVER_TEL2 VARCHAR(20),
+	RECEIVER_TEL3 VARCHAR(20),
+    DELIVERY_ADDRESS VARCHAR(500),
+    DELIVERY_METHOD VARCHAR(40),
+    DELIVERY_MESSAGE VARCHAR(300),
+	GIFT_WRAPPING VARCHAR(20),
+    PAY_METHOD VARCHAR(200),
+    PAY_ORDERER_HP_NUM VARCHAR(50),
+    PAY_ORDER_TIME DATETIME,
+    CARD_COM_NAME VARCHAR(50),
+    CARD_PAY_MONTH VARCHAR(20),
+    DELIVERY_STATUS VARCHAR(100)
     
 );
 
 /*    
     5) MEMBER_TB 테이블을 삭제하기.
 */
-
+DROP TABLE MEMBER_TB;
 /*    
     6) GOODS_TB 테이블을 삭제하기.
 */
-
+DROP TABLE GOODS_TB;
 /*    
     7) ORDER_TB 테이블을 삭제하기.
 */
-
+DROP TABLE ORDER_TB;
  /*   
     8) BMS_TEMP 데이터베이스 삭제하기
  */
+ DROP DATABASE BMS_TEMP;
