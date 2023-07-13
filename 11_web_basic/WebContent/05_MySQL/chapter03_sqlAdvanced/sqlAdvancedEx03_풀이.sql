@@ -77,35 +77,107 @@ INSERT INTO RENT_TB VALUES('rent20' , 2 , 'car16' , 'user5');
 
 
 # 1) 렌트일이 5일 이상인 차량정보 조회하기
-
-        
+SELECT 
+		*
+FROM 
+		CAR_TB C 
+	INNER JOIN RENT_TB R
+			ON C.CAR_CD = R.CAR_CD 
+	INNER JOIN MEMBER_TB M
+			ON R.MEMBER_ID = M.MEMBER_ID
+			AND R.RENT_PERIOD >= 5;
         
 # 2) 렌트일이 5일 이상인 회원정보 조회하기
-
-
+SELECT 
+		M.MEMBER_ID AS MEMBER_ID,
+        M.MEMBER_NM AS MEMBER_NM
+FROM 
+		RENT_TB R 
+	INNER JOIN 	CAR_TB C 
+			ON 	R.CAR_CD = C.CAR_CD 
+	INNER JOIN 	MEMBER_TB M 
+			ON 	R.MEMBER_ID = M.MEMBER_ID 
+			AND R.RENT_PERIOD >= 5 
+GROUP BY 	
+		M.MEMBER_ID ;
 
 # 3) '스타렉스'차량을 렌트한 회원정보를 조회하기
-
-
+SELECT 
+		*
+FROM 
+        RENT_TB R 
+	INNER JOIN 	CAR_TB C 
+			ON 	R.CAR_CD = C.CAR_CD 
+	INNER JOIN 	MEMBER_TB M 
+			ON 	R.MEMBER_ID = M.MEMBER_ID 
+			AND C.CAR_NM = '스타렉스' 
+GROUP BY 	
+		M.MEMBER_ID ;
 
 # 4) 'k3' , 'k5' , 'k7'을 주문한 회원정보를 조회하기
-
+SELECT 	
+		*
+FROM 		
+	  RENT_TB R 
+	INNER JOIN 	CAR_TB C 
+			ON 	R.CAR_CD = C.CAR_CD 
+	INNER JOIN 	MEMBER_TB M 
+			ON 	R.MEMBER_ID = M.MEMBER_ID 
+			AND C.CAR_NM IN ('K3' , 'K5', 'K7')
+GROUP BY 
+		M.MEMBER_ID;
           
           
 # 5) '아반떼' 차량의 평균 렌트일 조회하기
-
+SELECT 	
+		C.CAR_NM AS CAR_NM ,
+        AVG(RENT_PERIOD) AS RENT_AVG
+FROM 		
+		  RENT_TB R 
+	INNER JOIN 	CAR_TB C 
+			ON 	R.CAR_CD = C.CAR_CD 
+	INNER JOIN 	MEMBER_TB M 
+			ON 	R.MEMBER_ID = M.MEMBER_ID 
+			AND C.CAR_NM = '아반떼' 
+GROUP BY 
+		C.CAR_NM ;
 
           
 # 6) '유저1'의 렌트 횟수 조회하기
-
+SELECT 
+		R.COUNT(RENT_PERIOD)
+FROM 
+		 RENT_TB R 
+	INNER JOIN 	CAR_TB C 
+			ON 	R.CAR_CD = C.CAR_CD 
+	INNER JOIN 	MEMBER_TB M 
+			ON 	R.MEMBER_ID = M.MEMBER_ID 
+			AND M.MEMBER_NM = '유저1'
         
         
 # 7) 남성의 평균 렌트일 조회하기
-
-
+SELECT 
+		*
+FROM 
+		 RENT_TB R 
+	INNER JOIN 	CAR_TB C 
+			ON 	R.CAR_CD = C.CAR_CD 
+	INNER JOIN 	MEMBER_TB M 
+			ON 	R.MEMBER_ID = M.MEMBER_ID 	
+WHERE 
+		R.SEX = 'm' 
+        
 
 # 8) 20대 여성의 렌트일 조회하기
-
+SELECT 
+		*
+FROM 	
+		RENT_TB R 
+	INNER JOIN 	CAR_TB C 
+			ON 	R.CAR_CD = C.CAR_CD 
+	INNER JOIN 	MEMBER_TB M 
+			ON 	R.MEMBER_ID = M.MEMBER_ID 	
+           AND  M.SEX = 'f'
 
          
 # 9) 50000 ~ 100000 가격의 차량의 렌트횟수를 조회하기
