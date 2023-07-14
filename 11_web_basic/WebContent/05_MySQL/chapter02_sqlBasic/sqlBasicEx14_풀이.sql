@@ -28,33 +28,98 @@ INSERT INTO EMP_TB VALUES (7900 , 'JAMES' , 'CLERK' , '1981-12-03' , 950 , NULL 
 INSERT INTO EMP_TB VALUES (7902 , 'FORD' , 'ANALYST' , '1981-12-03' , 3000,NULL , 20);
 INSERT INTO EMP_TB VALUES (7934 , 'MILLER' , 'CLERK' , '1982-01-23' , 1300 , NULL , 10);
 
-
+SELECT * FROM EMP_TB;
 # 1) 월급의 평균을 조회하시오.
+SELECT
+		AVG(SALARY)
+FROM 	
+		EMP_TB;
 
 
 # 2) 가장 많은 커미션을 받고 있는 직책을 조회하시오.
-        
+SELECT 
+		JOB,
+		MAX(COMM)
+FROM 
+		EMP_TB
+GROUP BY
+		JOB;
         
 # 3) MANAGER직책의 직원수를 조회하시오.
-
+SELECT 
+		JOB,
+		COUNT(*)
+FROM 
+		EMP_TB
+GROUP BY 
+		JOB
+HAVING 
+		JOB = 'MANAGER';
 		
 # 4) 부서번호 10 , 30번에 속한 직원수를 조회하시오.
-		
+SELECT 
+		DEPT_NO,
+		COUNT(*)
+FROM 
+		EMP_TB
+GROUP BY 
+		DEPT_NO
+HAVING 
+		DEPT_NO IN (10, 30);
 		
 # 5) SALARYESMAN직책의 평균 급여를 조회하시오.
-		
+SELECT 
+		JOB,
+		AVG(SALARY)
+FROM 
+		EMP_TB
+GROUP BY 
+		JOB
+HAVING 
+		JOB = 'SALARYESMAN';
 		
 # 6) 1981년에 입사한 사원중 가장 많이 받은 급여를 조회하시오.
-
+SELECT 
+		MAX(SALARY)
+FROM 	
+		EMP_TB
+WHERE 
+		HIRE_DATE BETWEEN '1981-01-01' AND '1981-12-31';
 		
 # 7) 직책으로 그룹화하여 평균급여를 조회하시오. (직책 오름차순)
+SELECT 
+		JOB,
+		AVG(SALARY)
+FROM 
+		EMP_TB
+GROUP BY
+		JOB
+ORDER BY 
+		JOB;
 
 
 # 8) 부서별로 그룹화하여 평균급여를 조회하시오. (부서 오름차순)
-
+SELECT 
+		DEPT_NO,
+        AVG(SALARY)
+FROM 
+		EMP_TB
+GROUP BY
+		DEPT_NO
+ORDER BY
+		DEPT_NO
 		
 # 9) 입사 연도별로 그룹화하여 평균급여를 조회하시오. (연도 내림차순)
-		
+SELECT 
+        SUBSTRING(HIRE_DATE, 1,4) AS HIRE_DATE,
+        AVG(SALARY) AS SALARY
+FROM 
+		EMP_TB
+GROUP BY 
+		HIRE_DATE 
+ORDER BY
+		HIRE_DATE ASC,
+        SALARY;
 		
 # 10) 입사 연도별로 그룹화하여 커미션의 총합을 조회하시오. (연도 오름차순)
 		

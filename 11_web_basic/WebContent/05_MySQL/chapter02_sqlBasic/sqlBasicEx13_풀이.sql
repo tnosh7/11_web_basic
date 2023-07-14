@@ -158,24 +158,98 @@ GROUP BY
 		CATEGORY ;
 
 # 12) 등록연도별로 그룹화하여 등록된 차량의 수를 조회하기
-		
+SELECT 
+		SUBSTRING(REG_DT, 1, 4) AS YEAR ,
+		COUNT(*)
+FROM 
+		CAR_TB
+GROUP BY 
+		YEAR 
 		
 # 13) 브랜드명 , 차량의 크기별로 그룹화하여 평균금액을 조회하기
-		
-		
+SELECT 
+		CAR_TB_NM ,
+        CATEGORY,
+        AVG(PRICE)
+FROM
+		CAR_TB
+GROUP BY 
+		CAR_TB_NM ,
+        CATEGORY
+SELECT * FROM CAR_TB		
 # 14) 등록연도 , 브랜드명 , 차량의 크기별로 그룹화하여 평균렌트금액을 조회하되 평균 렌트금액 50000원 이상만 조회하기
-		
-		
+SELECT 
+		REG_DT,
+        BRAND_NM, 
+        CATEGORY ,
+        AVG(PRICE) AS AVG_PRICE  
+FROM 	
+		CAR_TB
+GROUP BY 
+		REG_DT,
+        BRAND_NM, 
+        CATEGORY 
+HAVING 
+		AVG_PRICE >= 50000;
 # 15) 2020년도 1사분기(1월~3월)과 2021년도 1사분기(1월~3월)에 등록된 차량의 개수 조회하기
-	 
+SELECT 
+		*
+FROM 
+		CAR_TB 
+GROUP BY 
+		REG_DT
+HAVING 
+		REG_DT BETWEEN '2021-01-01' AND '2021-12-31';
+
 
 # 16) 브랜드로 그룹화하여 2020년도 1사분기(1월~3월)과 2021년도 1사분기(1월~3월)에 등록된 차량의 개수 조회하기
 
+SELECT 	
+		BRAND_NM ,
+        COUNT(*)
+FROM	CAR_TB
+WHERE	(REG_DT BETWEEN '2020-01-01' AND '2020-03-31')
+		OR 
+		(REG_DT BETWEEN '2021-01-01' AND '2021-03-31')
+GROUP BY BRAND_NM ;
 		
 # 17) 브랜드로 그룹화하여 2020년도 1사분기(1월~3월)과 2021년도 1사분기(1월~3월)에 등록된 차량의 평균 렌트 가격을 조회하기 (가격 내림차순)
-
+SELECT 	
+		BRAND_NM ,
+        ROUND(AVG(PRICE)) AS PRICE
+FROM 	
+		CAR_TB
+WHERE
+		REG_DT BETWEEN '2020-01-01' AND '2020-03-31'
+        OR
+        REG_DT BETWEEN '2021-01-01' AND '2021-03-31'
+GROUP BY 
+		BRAND_NM 
+ORDER BY
+		PRICE DESC;
 		
 # 18) 브랜드별로 그룹화하여 렌트가격이 50000 ~ 100000사이의 차량의 개수를 조회하기(브랜드이름 오름차순)
+SELECT 
+		BRAND_NM ,
+        COUNT(*)
+FROM 	
+		CAR_TB
+WHERE
+		PRICE BETWEEN 50000 AND 100000
+GROUP BY
+		BRAND_NM 
+ORDER BY 
+		BRAND_NM ;
 
 
 # 19) 차량 크기별로 그룹화하여 등록된 차량의 개수를 조회하여 차량의 수가 많은 순서대로 정렬하기 (개수 내림차순 )
+SELECT 
+		CATEGORY,
+        COUNT(*) AS CAR_CNT
+FROM 
+		CAR_TB
+GROUP BY 
+		CATEGORY
+ORDER BY 
+		CAR_CNT DESC;
+		

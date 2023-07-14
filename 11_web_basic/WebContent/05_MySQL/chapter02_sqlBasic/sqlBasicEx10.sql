@@ -130,7 +130,7 @@ FROM
 WHERE
 		DELIVERY_STATUS <> '배송완료'
 GROUP BY 
-		DELIVERY_STATUS
+		DELIVERY_STATUS;
 
     
 # (GROUP BY + WHERE구문 + ORDER BY + LIMIT 예시) 'product4' , 'product5' , 'product6'이 아닌 상품별로 주문상품의 총 주문수량을 조회한뒤 가장 많이 주문된 상품 3개만 조회하기
