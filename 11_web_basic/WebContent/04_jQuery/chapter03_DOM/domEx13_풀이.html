@@ -3,6 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	$(function(){
+		var toggle = true; 
+		$("[name='search']").change(function(){
+			var answer = $("[name='search']:checked").val();
+			if (answer == "detail") {
+				toggle = false;
+			}
+			if (!toggle) {
+				$("#category").prop("disabled", false);
+				$("#keyword").prop("disabled", false);
+				$("#today").prop("disabled", false);
+				$("#1week").prop("disabled", false);
+				$("#1month").prop("disabled", false);
+				toggle = true;
+			}
+			else {
+				$("#category").prop("disabled", true);
+				$("#keyword").prop("disabled", true);
+				$("#today").prop("disabled", true);
+				$("#1week").prop("disabled", true);
+				$("#1month").prop("disabled", true);
+				toggle = true;
+			}
+	
+		});
+		
+	});
+
+</script>
 </head>
 <body>
 

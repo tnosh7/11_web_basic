@@ -3,6 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	$(function(){
+		$("[name='payMethod']").change(function(){
+			var answer = $("[name='payMethod']:checked").val();
+			if (answer == "card") {
+				var cardHtml = "카드 번호 : ";
+					cardHtml += "<input type='text' size='10'> - ";
+					cardHtml += "<input type='text' size='10'> - ";
+					cardHtml += "<input type='text' size='10'> - ";
+					cardHtml += "<input type='text' size='10'>";
+				$("#target").html(cardHtml);
+					
+			}
+			else if (answer == "phone") {
+				var phoneHtml = "<select>";
+					phoneHtml +="<option>010</option>";
+					phoneHtml +="<option>017</option>";
+					phoneHtml +="<option>018</option>";
+					phoneHtml +="<option>019</option>";
+					phoneHtml +="</select> - ";
+					phoneHtml +="<input type='text' size='10'> - ";
+					phoneHtml +="<input type='text' size='10'>";
+					$("#target").html(phoneHtml);
+				
+			}
+				
+		
+		
+		});
+		
+	});
+
+</script>
 </head>
 <body>
 

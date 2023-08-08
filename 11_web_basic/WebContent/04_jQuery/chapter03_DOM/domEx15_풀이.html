@@ -3,6 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	$(function(){
+		$("[name='brand']").change(function(){
+			var brandVal = $("[name='brand']:checked").val();
+			if (brandVal == "microsoft") {
+				$("#brandImg").prop("src", "../images/pic_3.jpg");
+			}
+			else {
+				$("#brandImg").prop("src", "../images/pic_1.jpg");
+			}
+		});
+		
+	});
+
+</script>
 </head>
 <body>
 

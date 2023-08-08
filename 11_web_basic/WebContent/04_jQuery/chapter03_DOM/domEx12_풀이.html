@@ -7,7 +7,15 @@
 <script src="../js/jquery-3.6.1.min.js"></script>
 <script>
 	$(function(){
-		$("[name='']").click(function(){
+		$("#answer").click(function(){
+			var answerVal = $("#inputBrowser").val();
+			
+			$("[name='browser']").each(function(){
+				if($(this).val() == answerVal) {
+					$(this).prop("checked", true);
+				}
+				else alert("값이 존재하지 않습니다");
+			})
 			
 		});
 		
