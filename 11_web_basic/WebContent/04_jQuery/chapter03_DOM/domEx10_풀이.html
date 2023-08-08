@@ -6,22 +6,21 @@
 <script src="../js/jquery-3.6.1.min.js"></script>
 <script>
 	$(function(){
-		
 		$("#searchType").change(function(){
-			var anw = $("#searchType").val();
-			var placeholderVal = "";
+			var placehoderVal = "";
+			var answer = $("#searchType").val();
+			if(answer == "goodId") placehoderVal = "상품번호를 입력하세요";			
+			else if(answer == "goodsTitle") placehoderVal = "상품이름을 입력하세요";		
+			else if(answer == "goodsWriter") placehoderVal = "저자를 입력하세요";			
+			else if(answer == "goodsPublisher") placehoderVal = "출판사를 입력하세요";			
 			
-			if (anw == "goodsId")  placeholderVal = "상품번호를 입력하세요";
-			else if (anw = "goodsTitle") placeholderVal = "상품이름를 입력하세요";
-			else if (anw = "goodsWriter") placeholderVal = "저자를 입력하세요";
-			else if (anw = "oodsPublisher") placeholderVal = "출판사를 입력하세요";
-			
-			$("#searchWord").prop("placeholder", placeholderVal);
+			$("#searchWord").prop("placeholder", placehoderVal);
 		});
+		
 	});
+	
 
-
-</script>
+</script>	
 </head>
 <body>
 	
