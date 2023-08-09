@@ -3,6 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	$(function(){
+		$("#addRow").click(function(){
+			var add = "<tr>";
+			 	add +="<td><input type='text' name='orderCd1(2,3,4,5)'></td>" ;
+			 	add +="<td><input type='text' name='orderNm1(2,3,4,5)'></td>" ;
+			 	add +="<td><input type='text' name='mgrCd1(2,3,4,5)'></td>" ;
+			 	add +="<td><input type='text' name='mgrNm1(2,3,4,5)'></td>" ;
+			 	add += "</tr>";
+			$("#orderTb").append("add");
+		});
+		$("#deleteRow").click(function(){
+			
+		});
+		
+	});
+
+</script>
 </head>
 <body>
 
@@ -36,7 +55,7 @@
 			는 삭제가 되어서는 안됩니다.
 	-->
 
-	<table border="1">
+	<table border="1" id="orderTb">
 		<tr>
 			<th>주문코드</th>
 			<th>주문이름</th>

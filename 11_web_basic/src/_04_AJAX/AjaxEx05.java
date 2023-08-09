@@ -10,26 +10,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ajaxEx03")
-public class AjaxEx03 extends HttpServlet {
+@WebServlet("/ajaxEx05")
+public class AjaxEx05 extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-    
+     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dis = request.getRequestDispatcher("04_jQuery/chapter04_AJAX/ajaxEx03.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("04_jQuery/chapter04_AJAX/ajaxEx05.jsp");
 		dis.forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		request.setCharacterEncoding("utf-8");
 		
-		// PrintWriter 객체를 사용하여 AJAX 성공 콜백함수에 데이터를 반환한다.
-		response.setContentType("text/html; charset=utf-8");
+		String id = request.getParameter("id");
+		String passwd = request.getParameter("passwd");
 		
+		String result = "fail";
+		if (id.equals("admin") && passwd.equals("admin"))  {
+			result = "success";
+		}
 		PrintWriter pw = response.getWriter();
-		pw.print("반환데이터 예시");
-		
-		
+		pw.print(result);
 	}
-	
-	
+
 }
