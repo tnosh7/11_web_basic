@@ -3,6 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>연습예제</title>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+
+	$(function(){
+		$("[name='reasonBuy']").change(function(){
+			var reasonBuyVal = $("[name='reasonBuy']:checked").val();		
+			if (reasonBuyVal == "etc") {
+				$("#ectDetail").html("<input type='text' size='50' name='etcReason' placeholder='이유를 적어주세요.'>");
+			}
+			else {
+				$("#etcDetail").html("");
+			}
+		});
+	});
+
+</script>
 </head>
 <body>
 
@@ -19,6 +36,7 @@
 	 -->
 
 	<fieldset>
+	
 		<p id="target">
 			<label for="browser">구매 이유 : </label>
 			<input type="radio" name="reasonBuy" value="quality"> 품질이 좋다
