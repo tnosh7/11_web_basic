@@ -4,10 +4,13 @@
 <meta charset="UTF-8">
 <title>연습예제</title>
 <script>
-    function answer(){
-       document.getElementById("choiceGradeLabel").innerHTML = "선택된 학년";
-       document.getElementById("choiceGrade").value = document.getElementById("grade").value;
-       document.getElementById("choiceGrade").disalbed = true; 
+
+    function answer() {
+        document.getElementById("choiceGradeLabel").innerHTML = "선택된 학년";
+        var grade =  document.getElementById("grade").value ;
+        document.getElementById("choiceGrade").value = grade;
+        document.getElementById("choiceGrade").disabled = true;
+
     }
 
 
